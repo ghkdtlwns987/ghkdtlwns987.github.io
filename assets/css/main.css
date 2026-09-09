@@ -2613,6 +2613,76 @@ section ul:not(.post-list) li::before {
   text-align: center;
 }
 
+.post-figure-panel {
+  padding: 0.75rem;
+}
+
+.post-figure-panel__grid {
+  display: grid;
+  gap: 0.75rem;
+  align-items: start;
+}
+
+.post-figure-panel__grid--3 {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.post-figure-panel__grid--2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.post-figure-panel__grid--4 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.post-figure-panel__item {
+  margin: 0;
+  padding: 0;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-sm);
+  background: var(--bg);
+  overflow: hidden;
+}
+
+.post-figure-panel__item img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 220px;
+  object-fit: contain;
+  background: #fff;
+}
+
+.post-figure-panel__item figcaption {
+  padding: 0.45rem 0.55rem;
+  font-size: 0.6875rem;
+  line-height: 1.4;
+  color: var(--text-muted);
+  border-top: 1px solid var(--border-light);
+  text-align: center;
+}
+
+.post-figure-panel__caption {
+  margin-top: 0.65rem;
+  padding: 0.55rem 0.25rem 0.15rem;
+  border-top: 1px solid var(--border-light);
+  font-size: 0.8125rem;
+  color: var(--text-muted);
+  text-align: center;
+}
+
+@media (max-width: 860px) {
+  .post-figure-panel__grid--3,
+  .post-figure-panel__grid--2,
+  .post-figure-panel__grid--4 {
+    grid-template-columns: 1fr;
+  }
+
+  .post-figure-panel__item img {
+    max-height: 280px;
+  }
+}
+
 .post-content > p > img,
 .post-content img:not(.post-figure img) {
   display: block;
@@ -4489,4 +4559,307 @@ a.post-series-link:hover {
 
 .error-page-link:hover {
   color: var(--link-hover);
+}
+
+/* ── Portfolio ── */
+.portfolio-subtitle {
+  margin: 0.35rem 0 0;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  line-height: 1.5;
+}
+
+.portfolio-card {
+  padding: 0;
+  overflow: hidden;
+}
+
+.portfolio-card-link {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  height: 100%;
+  min-height: 10rem;
+  padding: 1.25rem 1.375rem;
+  text-decoration: none;
+  color: inherit;
+}
+
+.portfolio-card-link:hover {
+  color: inherit;
+}
+
+.portfolio-card-meta {
+  margin: 0;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+.portfolio-card-title {
+  margin: 0;
+  font-size: 1.25rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+.portfolio-card-summary {
+  margin: 0;
+  flex: 1;
+  font-size: 0.9375rem;
+  line-height: 1.55;
+  color: var(--text-muted);
+}
+
+.portfolio-card-cta {
+  margin-top: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--accent);
+}
+
+.portfolio-card-link:hover .portfolio-card-cta {
+  color: var(--link-hover);
+}
+
+/* Portfolio print / PDF (Cmd+P) — 웹 UI는 유지, 인쇄만 문서화 */
+@media print {
+  @page {
+    size: A4;
+    margin: 16mm 14mm;
+  }
+
+  body.is-portfolio {
+    background: #fff !important;
+    color: #111 !important;
+    font-size: 11pt;
+    line-height: 1.55;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  body.is-portfolio .sidebar-left,
+  body.is-portfolio .content-topbar,
+  body.is-portfolio .post-side-rail,
+  body.is-portfolio .site-header,
+  body.is-portfolio .poster-breadcrumb,
+  body.is-portfolio .figure-lightbox,
+  body.is-portfolio .nav-toggle,
+  body.is-portfolio .theme-toggle {
+    display: none !important;
+  }
+
+  body.is-portfolio .site-wrapper {
+    display: block !important;
+  }
+
+  body.is-portfolio .content-area,
+  body.is-portfolio .main-content {
+    margin: 0 !important;
+    padding: 0 !important;
+    max-width: none !important;
+    width: 100% !important;
+    background: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
+  }
+
+  body.is-portfolio .post-layout {
+    display: block !important;
+    grid-template-columns: none !important;
+    gap: 0 !important;
+  }
+
+  body.is-portfolio .post,
+  body.is-portfolio .portfolio-article {
+    margin: 0 auto !important;
+    padding: 0 !important;
+    max-width: 42em !important;
+    background: transparent !important;
+    border: none !important;
+    box-shadow: none !important;
+    border-radius: 0 !important;
+  }
+
+  body.is-portfolio .post-header {
+    margin: 0 0 1.25rem !important;
+    padding: 0 !important;
+    border: none !important;
+  }
+
+  body.is-portfolio .post-header h1 {
+    margin: 0 0 0.35rem !important;
+    font-size: 20pt !important;
+    font-weight: 700 !important;
+    color: #111 !important;
+    page-break-after: avoid;
+    break-after: avoid-page;
+  }
+
+  body.is-portfolio .portfolio-subtitle {
+    margin: 0 !important;
+    font-size: 11pt !important;
+    color: #333 !important;
+  }
+
+  body.is-portfolio .post-content {
+    margin: 0 !important;
+    padding: 0 !important;
+    max-width: none !important;
+    color: #111 !important;
+    font-size: 11pt !important;
+  }
+
+  body.is-portfolio .post-content h2 {
+    margin: 1.35rem 0 0.55rem !important;
+    font-size: 14pt !important;
+    font-weight: 700 !important;
+    color: #111 !important;
+    page-break-after: avoid;
+    break-after: avoid-page;
+  }
+
+  body.is-portfolio .post-content h3 {
+    margin: 1.1rem 0 0.4rem !important;
+    font-size: 12pt !important;
+    font-weight: 650 !important;
+    color: #111 !important;
+    page-break-after: avoid;
+    break-after: avoid-page;
+  }
+
+  body.is-portfolio .post-content h4 {
+    margin: 0.9rem 0 0.35rem !important;
+    font-size: 11pt !important;
+    font-weight: 600 !important;
+    color: #111 !important;
+    page-break-after: avoid;
+    break-after: avoid-page;
+  }
+
+  body.is-portfolio .post-content p,
+  body.is-portfolio .post-content li {
+    color: #111 !important;
+    font-size: 11pt !important;
+    line-height: 1.65 !important;
+    orphans: 3;
+    widows: 3;
+  }
+
+  body.is-portfolio .post-content a {
+    color: #111 !important;
+    text-decoration: underline;
+  }
+
+  body.is-portfolio .post-content a[href]::after {
+    content: none !important;
+  }
+
+  body.is-portfolio .post-content blockquote {
+    border-left: 3px solid #ccc !important;
+    color: #222 !important;
+    background: transparent !important;
+  }
+
+  body.is-portfolio .post-content table {
+    width: 100% !important;
+    border-collapse: collapse !important;
+    page-break-inside: avoid;
+    break-inside: avoid;
+  }
+
+  body.is-portfolio .post-content th,
+  body.is-portfolio .post-content td {
+    border: 1px solid #ccc !important;
+    color: #111 !important;
+    background: transparent !important;
+  }
+
+  body.is-portfolio .post-figure,
+  body.is-portfolio .post-content figure {
+    display: block !important;
+    width: fit-content !important;
+    max-width: 100% !important;
+    margin: 1rem auto !important;
+    padding: 0 !important;
+    border: none !important;
+    background: transparent !important;
+    text-align: center !important;
+    page-break-inside: avoid;
+    break-inside: avoid-page;
+  }
+
+  body.is-portfolio .post-figure-panel {
+    width: 100% !important;
+    max-width: 100% !important;
+    padding: 0.35rem !important;
+    border: 1px solid #ddd !important;
+    background: #fff !important;
+  }
+
+  body.is-portfolio .post-figure-panel__grid--3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr)) !important;
+    gap: 0.35rem !important;
+  }
+
+  body.is-portfolio .post-figure-panel__grid--2,
+  body.is-portfolio .post-figure-panel__grid--4 {
+    grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+    gap: 0.4rem !important;
+  }
+
+  body.is-portfolio .post-figure-panel__item {
+    border: 1px solid #ddd !important;
+    background: #fff !important;
+  }
+
+  body.is-portfolio .post-figure-panel__item img {
+    display: block !important;
+    width: 100% !important;
+    max-width: 100% !important;
+    max-height: 48mm !important;
+    height: auto !important;
+    margin: 0 !important;
+    object-fit: contain !important;
+    background: #fff !important;
+  }
+
+  body.is-portfolio .post-figure-panel__item figcaption {
+    font-size: 7pt !important;
+    color: #444 !important;
+    border-top-color: #ddd !important;
+    text-align: center !important;
+  }
+
+  body.is-portfolio .post-figure-panel__caption {
+    color: #444 !important;
+    font-size: 9pt !important;
+    text-align: center !important;
+  }
+
+  body.is-portfolio .post-figure:not(.post-figure-panel) img {
+    display: block !important;
+    width: auto !important;
+    max-width: 105mm !important;
+    max-height: 70mm !important;
+    height: auto !important;
+    margin-left: auto !important;
+    margin-right: auto !important;
+    page-break-inside: avoid;
+    break-inside: avoid-page;
+  }
+
+  body.is-portfolio .post-figure figcaption {
+    color: #444 !important;
+    font-size: 9pt !important;
+    text-align: center !important;
+  }
+
+  body.is-portfolio hr {
+    border: none !important;
+    border-top: 1px solid #ddd !important;
+  }
 }

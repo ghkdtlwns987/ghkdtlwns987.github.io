@@ -8,5 +8,7 @@ Disallow: /figure/*.pdf$
 Disallow: /bob.png
 Disallow: /ho-dong.png
 Disallow: /1.png
+Disallow: /portfolio/
+Disallow: /portfolio/*
 
 Sitemap: https://ghkdtlwns987.github.io/sitemap.xml
