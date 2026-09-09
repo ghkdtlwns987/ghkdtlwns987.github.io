@@ -4614,6 +4614,12 @@ a.post-series-link:hover {
   color: var(--text-muted);
 }
 
+/* 웹에서는 숨기고, 인쇄(@media print)에서만 페이지 넘김 */
+body.is-portfolio next,
+body.is-portfolio .print-page-break {
+  display: none;
+}
+
 .portfolio-card-cta {
   margin-top: 0.5rem;
   font-size: 0.875rem;
@@ -4633,6 +4639,15 @@ a.post-series-link:hover {
   }
 
   body.is-portfolio {
+    --bg: #fff;
+    --bg-secondary: #f5f5f5;
+    --bg-card: #fff;
+    --border: #ccc;
+    --border-light: #ddd;
+    --text: #111;
+    --text-muted: #333;
+    --accent: #111;
+    --link-hover: #111;
     background: #fff !important;
     color: #111 !important;
     font-size: 11pt;
@@ -4713,6 +4728,29 @@ a.post-series-link:hover {
     font-size: 11pt !important;
   }
 
+  /* h1은 자동 페이지 넘김 없음 — <next></next> 로만 지정 */
+  body.is-portfolio .post-content h1 {
+    margin: 1.5rem 0 0.65rem !important;
+    font-size: 16pt !important;
+    font-weight: 700 !important;
+    color: #111 !important;
+    page-break-after: avoid;
+    break-after: avoid-page;
+  }
+
+  /* 마크다운: <next></next> 또는 <div class="print-page-break"></div> */
+  body.is-portfolio next,
+  body.is-portfolio .print-page-break {
+    display: block !important;
+    height: 0 !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    border: none !important;
+    overflow: hidden !important;
+    page-break-before: always;
+    break-before: page;
+  }
+
   body.is-portfolio .post-content h2 {
     margin: 1.35rem 0 0.55rem !important;
     font-size: 14pt !important;
@@ -4778,6 +4816,16 @@ a.post-series-link:hover {
     background: transparent !important;
   }
 
+  body.is-portfolio .post-content strong,
+  body.is-portfolio .post-content b,
+  body.is-portfolio .post-content td strong,
+  body.is-portfolio .post-content th strong {
+    color: #111 !important;
+    border: none !important;
+    background: transparent !important;
+    box-shadow: none !important;
+  }
+
   body.is-portfolio .post-figure,
   body.is-portfolio .post-content figure {
     display: block !important;
@@ -4792,12 +4840,15 @@ a.post-series-link:hover {
     break-inside: avoid-page;
   }
 
-  body.is-portfolio .post-figure-panel {
+  /* 패널은 통째로 넘기지 않고 행 단위로 나눌 수 있게 — 큰 여백 방지 */
+  body.is-portfolio .post-figure.post-figure-panel {
     width: 100% !important;
     max-width: 100% !important;
     padding: 0.35rem !important;
     border: 1px solid #ddd !important;
     background: #fff !important;
+    page-break-inside: auto !important;
+    break-inside: auto !important;
   }
 
   body.is-portfolio .post-figure-panel__grid--3 {
@@ -4814,13 +4865,15 @@ a.post-series-link:hover {
   body.is-portfolio .post-figure-panel__item {
     border: 1px solid #ddd !important;
     background: #fff !important;
+    page-break-inside: avoid;
+    break-inside: avoid-page;
   }
 
   body.is-portfolio .post-figure-panel__item img {
     display: block !important;
     width: 100% !important;
     max-width: 100% !important;
-    max-height: 48mm !important;
+    max-height: 42mm !important;
     height: auto !important;
     margin: 0 !important;
     object-fit: contain !important;
@@ -4850,6 +4903,20 @@ a.post-series-link:hover {
     margin-right: auto !important;
     page-break-inside: avoid;
     break-inside: avoid-page;
+  }
+
+  /* print="wide" — width=1200 등 웹용 크기가 PDF에서 무시되지 않도록 */
+  body.is-portfolio .post-figure--print-wide {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0.75rem 0 !important;
+  }
+
+  body.is-portfolio .post-figure--print-wide img {
+    width: 100% !important;
+    max-width: 100% !important;
+    max-height: 190mm !important;
+    height: auto !important;
   }
 
   body.is-portfolio .post-figure figcaption {

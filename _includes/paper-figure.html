@@ -1,8 +1,9 @@
 {% comment %}
-  Paper figure. Params: src, caption, alt, width.
+  Paper figure. Params: src, caption, alt, width, print.
+  print="wide" — PDF에서 본문 폭 전체·더 큰 높이로 출력
   Image path: assets/images/{src}
 {% endcomment %}
-<figure class="post-figure"{% if include.width %} style="max-width: {{ include.width }}px; margin-left: auto; margin-right: auto;"{% endif %}>
+<figure class="post-figure{% if include.print == 'wide' %} post-figure--print-wide{% endif %}"{% if include.width %} style="max-width: {{ include.width }}px; margin-left: auto; margin-right: auto;"{% endif %}>
   <img
     src="{{ '/assets/images/' | append: include.src | relative_url }}"
     alt="{{ include.alt | default: include.caption | strip_html }}"

@@ -124,6 +124,7 @@ CLEAR는 취약점 탐지를 단순한 코드 패턴 분류가 아니라, **취�
 
 ---
 
+<next></next>
 ## CRAFT: Causality-aware Reasoning and Adaptive Framework for Vulnerability Types
 
 **IEEE Transactions on Dependable and Secure Computing (TDSC)** — Submitted  
