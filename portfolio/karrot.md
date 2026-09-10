@@ -154,8 +154,6 @@ RAG를 활용하면 외부 보안 지식을 제공할 수 있지만, 검색된 �
 ---
 
 
-
-
 <next></next>
 ## CRAFT: Causality-aware Reasoning and Adaptive Framework for Vulnerability Types {#craft}
 
@@ -191,26 +189,6 @@ CLEAR를 통해 인과 지식과 Multi-Agent Reasoning이 LLM의 판단을 보�
 ### 무엇을 증명했는가?
 
 CLEAR 대비 Pairwise Correct Prediction (P-C) **27.15% 상대 개선**을 확인했습니다. 특히 Typed Representation을 제거했을 때 P-C가 **21.31에서 2.99**로 크게 감소하여, 문제 유형에 적합한 지식 표현이 실제 판단 성능에 중요한 역할을 한다는 점을 확인했습니다.
-
-# 03. Research Projects {#research-projects}
-
-| 항목 | 내용 |
-|:--|:--|
-| 과제명 | 거대 언어 모델 기반 안드로이드 취약점 탐지 및 자동 수리 |
-| 발주기관명 | (재)한국연구재단 |
-| 연구기간 | 2025.08.01 ~ |
-| 역할 | 참여연구원 |
-
-### 연구 목표
-
-거대 언어모델의 코드 및 맥락 이해 능력을 활용하여 안드로이드 앱 내 취약점을 자동으로 탐지하고 수리하는 연구입니다.
-
-### 수행 내용
-
-- 취약점을 발생 메커니즘에 따라 네 가지 인과 유형으로 구조화
-- 구조화된 인과관계를 Knowledge Graph로 구현
-- LLM 기반 취약점 탐지 및 Multi-Agent Reasoning 연구
-- 관련 연구 IEEE/ACM Automated Software Engineering 2026 채택
 
 <next></next>
 # 04. Projects {#projects}
