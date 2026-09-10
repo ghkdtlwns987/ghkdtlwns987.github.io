@@ -4614,10 +4614,12 @@ a.post-series-link:hover {
   color: var(--text-muted);
 }
 
-/* 웹에서는 숨기고, 인쇄(@media print)에서만 페이지 넘김 */
-body.is-portfolio next,
-body.is-portfolio .print-page-break {
-  display: none;
+/* 웹 화면에서만 숨김 — 인쇄/PDF 에서는 @media print 규칙 사용 */
+@media screen {
+  body.is-portfolio next,
+  body.is-portfolio .print-page-break {
+    display: none;
+  }
 }
 
 .portfolio-card-cta {

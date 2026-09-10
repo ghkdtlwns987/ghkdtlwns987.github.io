@@ -6,27 +6,26 @@ permalink: /portfolio/resume/
 sitemap: false
 robots: noindex, nofollow
 description: >-
-  황시준 CV. 한양대학교 정보보호학과 석사과정. 학력·경력·자격·수상·기술 스택.
+  황시준 CV. 한양대학교 정보보호학과 석사과정. 학력/경력/자격/수상/기술 스택.
 ---
 
-## Security Researcher | Software Security · AI Security
+## Security Researcher | Software Security / AI Security
 
 한양대학교 정보보호학과 석사과정.  
 LLM for Software Engineering 및 AI-driven Software Security를 연구합니다.
 
 - Email: [ghkdtlwns987@hanyang.ac.kr](mailto:ghkdtlwns987@hanyang.ac.kr)
 - Blog: [https://ghkdtlwns987.github.io](https://ghkdtlwns987.github.io/)
-- GitHub: [ghkdtlwns987](https://github.com/ghkdtlwns987)
 
 # 01. Education
 
 ### 한양대학교 일반대학원 — 정보보호학과 석사과정
 
-**2025.03 ~ Present**
+**2025.03 ~ 2027.02(졸업 예정)**
 
 ### 조선대학교 — 컴퓨터공학과
 
-**2018.03 ~ 2024.02** · 학사 졸업
+**2018.03 ~ 2024.02** / 학사 졸업
 
 # 02. Professional Experience
 
@@ -36,15 +35,15 @@ LLM for Software Engineering 및 AI-driven Software Security를 연구합니다.
 
 - VMware 기반 정보보안 실습 환경 구축
 - Web Hacking / Pwnable / Reversing 강의 및 정보보안 커리큘럼 설계
-- 2022 사이버보안 지방·전국 기능경기대회 금·은·동·장려상 수상 지도
+- 2022 사이버보안 지방/전국 기능경기대회 금/은/동/장려상 수상 지도
 - 2023 사이버보안 국제 기능올림픽 출전 지도
 
 ### Hacker Login — Mentor / Security Instructor
 
 **2021.12 ~ 2022.05**
 
-- Blue Team 웹 서비스 구축 · Red Team 취약점 분석
-- Pwnable · 웹 보안 교육
+- Blue Team 웹 서비스 구축 / Red Team 취약점 분석
+- Pwnable / 웹 보안 교육
 
 # 03. Activities
 
@@ -74,28 +73,26 @@ LLM for Software Engineering 및 AI-driven Software Security를 연구합니다.
 | Date | Award | Organization | Details |
 | --- | --- | --- | --- |
 | 2022.09.28 | 웹 취약점 분석 경진대회 **대상** | KOSPO | Team. 고점에 사람있어요 — 공공기관 홈페이지 취약점 발굴 |
-| 2022.09.30 | HCCC 침해대응·분석 경진대회 **우수상** | 한국전력 | NFV 인프라 구축, 웹 취약점 점검, 침해사고 대응·분석, 악성코드 분석 |
-| 2022.09.29 | AI 학습용 데이터 구축 해커톤 **동상** | (주)비온시이노베이터 | CNN 신경망을 통한 화재 탐지 |
-| 2021 | NCSC 비공식 대회 **1위** | NCSC | — |
+| 2022.09.30 | HCCC 침해대응/분석 경진대회 **우수상** | 한국전력 | NFV 인프라 구축, 웹 취약점 점검, 침해사고 대응/분석, 악성코드 분석 |
 
 # 07. Technical Skills
 
 ### AI
 
-- Large Language Models · LangChain
-- RAG · Knowledge Graph · PyTorch
+- Large Language Models / LangChain
+- RAG / Knowledge Graph / PyTorch
 
 ### Security
 
-- Vulnerability Research · Reverse Engineering
-- Web Hacking · Pwnable · Malware Analysis
+- Vulnerability Research / Reverse Engineering
+- Web Hacking / Pwnable / Malware Analysis
 
 ### Cloud / DevOps
 
-- Kubernetes · Docker · AWS
-- Jenkins · GitHub Actions · Linux
+- Kubernetes / Docker / AWS
+- Jenkins / GitHub Actions / Linux
 
 ### Backend
 
-- Java · Spring Boot · Python
-- PHP · JavaScript
+- Java / Spring Boot / Python
+- PHP / JavaScript

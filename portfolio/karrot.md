@@ -24,8 +24,21 @@ description: >-
 - Knowledge Graph
 - Retrieval Augmented Generation (RAG)
 
+## Index
+
+1. [00. Why Karrot](#why-karrot)
+2. [01. Research Overview](#research-overview)
+3. [02. Publications](#publications)
+   - [CLEAR](#clear)
+   - [CRAFT](#craft)
+4. [03. Research Projects](#research-projects)
+5. [04. Projects](#projects)
+   - [4.1 교내 라이브 코딩 시스템](#live-coding)
+   - [4.2 AI 기반 Malware Detection MSA](#malware-detection)
+6. [05. Awards](#awards-certifications)
+
 <next></next>
-# 00. Why Karrot
+# 00. Why Karrot {#why-karrot}
 
 당근의 AI 기능을 안전하게 만들기 위해서는 새로운 공격 기법을 아는 것뿐 아니라 실제 AI 기능이 어떤 구조로 동작하는지를 이해하고 공격 가능성을 반복적으로 검증할 수 있어야 한다고 생각합니다.
 
@@ -36,7 +49,7 @@ description: >-
 AI Security에는 아직 업계 전체가 답을 찾아가는 중인 문제가 많다는 것을 알고 있습니다. 저는 "완벽한 답"을 미리 갖고 오기보다, 당근의 서비스와 조직 상황을 이해하며 팀과 함께 지금 상황에 맞는 최선의 답을 찾아가는 과정에 기여하고 싶습니다.
 
 <next></next>
-# 01. Research Overview
+# 01. Research Overview {#research-overview}
 
 ## Research Question
 
@@ -53,9 +66,9 @@ LLM을 활용한 소프트웨어 취약점 탐지를 연구하며, 모델이 단
 이를 위해 Knowledge Graph, RAG, Multi-Agent Reasoning을 결합하여 필요한 보안 지식을 선택적으로 검색하고 여러 Agent가 서로 다른 역할로 분석과 검증을 수행하는 Agentic AI 시스템을 설계했습니다.
 
 <next></next>
-# 02. Publications
+# 02. Publications {#publications}
 
-## CLEAR: Causal Context-Based Agentic Reasoning for Vulnerability Detection
+## CLEAR: Causal Context-Based Agentic Reasoning for Vulnerability Detection {#clear}
 
 **IEEE/ACM International Conference on Automated Software Engineering (ASE 2026)**
 
@@ -144,7 +157,7 @@ RAG를 활용하면 외부 보안 지식을 제공할 수 있지만, 검색된 �
 
 
 <next></next>
-## CRAFT: Causality-aware Reasoning and Adaptive Framework for Vulnerability Types
+## CRAFT: Causality-aware Reasoning and Adaptive Framework for Vulnerability Types {#craft}
 
 **IEEE Transactions on Dependable and Secure Computing (TDSC)** — Submitted
 
@@ -179,7 +192,7 @@ CLEAR를 통해 인과 지식과 Multi-Agent Reasoning이 LLM의 판단을 보�
 
 CLEAR 대비 Pairwise Correct Prediction (P-C) **27.15% 상대 개선**을 확인했습니다. 특히 Typed Representation을 제거했을 때 P-C가 **21.31에서 2.99**로 크게 감소하여, 문제 유형에 적합한 지식 표현이 실제 판단 성능에 중요한 역할을 한다는 점을 확인했습니다.
 
-# 03. Research Projects
+# 03. Research Projects {#research-projects}
 
 | 항목 | 내용 |
 |:--|:--|
@@ -200,9 +213,9 @@ CLEAR 대비 Pairwise Correct Prediction (P-C) **27.15% 상대 개선**을 확�
 - 관련 연구 IEEE/ACM Automated Software Engineering 2026 채택
 
 <next></next>
-# 04. Projects
+# 04. Projects {#projects}
 
-## 4.1 교내 라이브 코딩 시스템 구축 및 운영
+## 4.1 교내 라이브 코딩 시스템 구축 및 운영 {#live-coding}
 기한 : 2021.01 ~ 2023.09(PL)
 
 교내 과제와 시험에 실제 사용되는 온라인 코드 채점 시스템의 Web / DB / Worker 환경을 구축하고 약 3년간 운영했습니다.
@@ -224,7 +237,7 @@ CLEAR 대비 Pairwise Correct Prediction (P-C) **27.15% 상대 개선**을 확�
 
 실제 사용되는 서비스를 장기간 운영하며 인프라 구축, 보안 설정, 운영 자동화부터 장애 분석과 시스템 구조 개선까지 경험했습니다.
 
-## 4.2 AI 기반 Malware Detection MSA
+## 4.2 AI 기반 Malware Detection MSA {#malware-detection}
 
 **Infrastructure**
 
@@ -246,7 +259,7 @@ Kubernetes 배포 과정에서는 기존 Spring Cloud 기반 구성이 정상적
 Kubernetes와 CNI Network의 동작 방식을 분석하고 기존 구조를 배포 환경에 맞게 수정했습니다.
 
 <next></next>
-# 05. Awards & Certifications
+# 05. Awards & Certifications {#awards-certifications}
 
 ## Awards
 
