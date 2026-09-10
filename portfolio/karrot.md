@@ -26,16 +26,16 @@ description: >-
 
 ## Index
 
-1. [00. Why Karrot](#why-karrot)
-2. [01. Research Overview](#research-overview)
-3. [02. Publications](#publications)
+[00. Why Karrot](#why-karrot)
+[01. Research Overview](#research-overview)
+[02. Publications](#publications)
    - [CLEAR](#clear)
    - [CRAFT](#craft)
-4. [03. Research Projects](#research-projects)
-5. [04. Projects](#projects)
+[03. Research Projects](#research-projects)
+[04. Projects](#projects)
    - [4.1 교내 라이브 코딩 시스템](#live-coding)
    - [4.2 AI 기반 Malware Detection MSA](#malware-detection)
-6. [05. Awards](#awards-certifications)
+[05. Awards](#awards-certifications)
 
 <next></next>
 # 00. Why Karrot {#why-karrot}
