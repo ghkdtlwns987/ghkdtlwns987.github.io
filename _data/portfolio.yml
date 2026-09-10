@@ -11,3 +11,9 @@ items:
     summary: >-
       Software Security · AI Agent Security — CLEAR · CRAFT · 침해사고 · Why Karrot
     url: /portfolio/karrot/
+  - slug: resume
+    title: Resume
+    meta: Curriculum Vitae
+    summary: >-
+      학력 · 경력 · 자격 · 수상 · Technical Skills
+    url: /portfolio/resume/

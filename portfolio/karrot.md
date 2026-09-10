@@ -13,6 +13,8 @@ description: >-
 
 소프트웨어 취약점을 공격자의 관점에서 분석해 온 경험과 LLM 기반 취약점 탐지 연구를 바탕으로, 외부 지식과 Multi-Agent Reasoning을 활용한 **Agentic AI의 분석과 검증**을 연구합니다.
 
+**Blog:** [https://ghkdtlwns987.github.io](https://ghkdtlwns987.github.io/)
+
 **Research Keywords**
 
 - Software Security
@@ -21,14 +23,6 @@ description: >-
 - Multi-Agent Reasoning
 - Knowledge Graph
 - Retrieval Augmented Generation (RAG)
-
-## Certifications
-
-| 자격 | 취득일 | 등록 번호 | 
-|:--|:--|
-| **Certified Kubernetes Administrator (CKA)** | 2023.12.29 | LF-ivspgcpjbv |
-| **AWS Certified Solutions Architect – Associate** | 2023.10.21 | 461973410 | 
-| **정보처리기사** | 2024.06 | 24201060948K |
 
 <next></next>
 # 00. Why Karrot
