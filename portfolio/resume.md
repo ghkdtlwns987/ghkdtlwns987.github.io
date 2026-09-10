@@ -45,6 +45,7 @@ LLM for Software Engineering 및 AI-driven Software Security를 연구합니다.
 - Blue Team 웹 서비스 구축 / Red Team 취약점 분석
 - Pwnable / 웹 보안 교육
 
+<next></next>
 # 03. Activities
 
 ### 차세대 보안리더 양성 프로그램(BoB) 10기 — 취약점 분석 트랙
@@ -65,8 +66,8 @@ LLM for Software Engineering 및 AI-driven Software Security를 연구합니다.
 
 # 05. Language
 
-**TOEIC Speaking — AL (160)**  
-취득일: 2024.08.04
+**TOEIC Speaking — IH (140)**  
+취득일: 2026.06.21
 
 # 06. Awards
 
