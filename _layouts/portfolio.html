@@ -1,14 +1,16 @@
 ---
 layout: default
 ---
-<div class="post-layout">
+<div class="post-layout{% if page.anonymous %} post-layout--anonymous{% endif %}">
   <article class="post portfolio-article" id="post-article">
     <header class="post-header">
+      {% unless page.anonymous %}
       <nav class="poster-breadcrumb" aria-label="Breadcrumb">
         <a href="{{ '/portfolio/' | relative_url }}">Portfolio</a>
         <span class="poster-breadcrumb-sep" aria-hidden="true">/</span>
         <span class="poster-breadcrumb-current">{{ page.title }}</span>
       </nav>
+      {% endunless %}
       <h1>{{ page.title }}</h1>
       {% if page.subtitle %}
       <p class="portfolio-subtitle">{{ page.subtitle }}</p>
@@ -19,6 +21,7 @@ layout: default
     </div>
   </article>
 
+  {% unless page.anonymous %}
   <div class="post-side-rail">
     {% include content-topbar.html %}
     <aside class="post-toc page-rail" id="post-toc" aria-label="Contents" hidden>
@@ -30,6 +33,7 @@ layout: default
       </details>
     </aside>
   </div>
+  {% endunless %}
 </div>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js" crossorigin="anonymous"></script>
 <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js" crossorigin="anonymous"

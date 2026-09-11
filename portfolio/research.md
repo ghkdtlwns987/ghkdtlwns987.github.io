@@ -2,7 +2,7 @@
 layout: portfolio
 title: 황시준(Sijune Hwang)
 subtitle: 
-permalink: /portfolio/samsung/
+permalink: /portfolio/research/
 sitemap: false
 robots: noindex, nofollow
 description: >-
@@ -42,7 +42,7 @@ LLM은 다양한 문제에서 뛰어난 성능을 보이지만, 모델이 가진
 
 # 02. Publications
 
-## CLEAR: Causal Context-Based Agentic Reasoning for Vulnerability Detection
+## 02_1. CLEAR: Causal Context-Based Agentic Reasoning for Vulnerability Detection
 
 **IEEE/ACM International Conference on Automated Software Engineering (ASE 2026)**
 
@@ -125,7 +125,7 @@ CLEAR는 취약점 탐지를 단순한 코드 패턴 분류가 아니라, **취�
 ---
 
 <next></next>
-## CRAFT: Causality-aware Reasoning and Adaptive Framework for Vulnerability Types
+## 02_2. CRAFT: Causality-aware Reasoning and Adaptive Framework for Vulnerability Types
 
 **IEEE Transactions on Dependable and Secure Computing (TDSC)** — Submitted  
 Paper Link: Under Review / Not Publicly Available
@@ -151,6 +151,34 @@ CLEAR에서는 취약점의 인과관계를 구조화하고 Multi-Agent Reasonin
 ### 무엇을 증명했는가?
 
 CLEAR 대비 Pairwise Correct Prediction (P-C) **27.15%** 상대 개선을 확인했습니다. Ablation Study를 통해 제안 방법이 각각 성능 향상에 기여한다는 점도 정량적으로 검증했습니다. 이는 문제에 맞게 Agent의 역할과 정보 흐름을 설계하는 것이 중요하다는 점을 시사합니다.
+
+<next></next>
+## 02_3. An Empirical Study of Vulnerability Detection under Pairwise Evaluation
+Master’s Thesis
+
+### Problem Definition
+
+기존 평가 방식은 AI 기반 소프트웨어 취약점 탐지 모델의 실제 식별 능력을 충분히 검증하고 있는가?
+
+기존 연구에서는 취약 코드와 정상 코드를 독립적인 Sample로 평가하고 Accuracy, F1-score 등의 지표로 성능을 측정하는 경우가 많습니다. 그러나 실제 취약점 패치는 대부분의 코드가 유지된 상태에서 일부 보안 관련 코드만 변경되기 때문에, 이러한 평가만으로는 모델이 취약점을 제거한 코드 변화에 적절하게 반응하는지 충분히 확인하기 어렵습니다.
+
+### Research Question
+
+취약 코드와 패치 코드를 하나의 Pair로 평가하면 기존 평가에서 드러나지 않는 취약점 탐지 모델의 판단 특성과 실패 패턴을 확인할 수 있지 않을까?
+
+### Methodology
+
+Vulnerable–Patched Pairwise Evaluation
+
+동일 함수의 취약 버전과 패치 버전을 하나의 Pair로 구성하고, 모델이 두 버전을 정확하게 구별하는지를 평가했습니다.
+
+예측 결과를 **P-C (Correct), P-V (Vulnerable), P-B (Benign), P-R (Reversed)**의 네 유형으로 구분하고, 올바른 판단과 역전된 판단의 차이를 측정하는 **VPS (Vulnerability Pairwise Score)**를 활용하여 Pretrained Code Model, LLM, RAG, Multi-Agent 등 다양한 취약점 탐지 방법론을 비교했습니다.
+
+### 무엇을 증명했는가?
+
+실험 결과, 기존 방법들은 일반적인 분류 성능과 별개로 취약 코드와 패치 코드를 동시에 정확하게 구별하는 데 상당한 한계가 있음을 확인했습니다.
+
+이를 통해 AI 기반 취약점 탐지 기술을 평가할 때 단순한 개별 Sample의 탐지 정확도뿐만 아니라, 보안에 영향을 주는 코드 변화에 모델의 판단이 적절하게 반응하는지를 함께 검증할 필요가 있음을 제시했습니다.
 
 # 03. Patent
 

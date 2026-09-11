@@ -11,6 +11,48 @@ items:
     summary: >-
       Software Security · AI Agent Security — CLEAR · CRAFT · 침해사고 · Why Karrot
     url: /portfolio/karrot/
+  - slug: research
+    title: Research
+    meta: Research Portfolio
+    summary: >-
+      LLM-based Agentic AI for Software Engineering — CLEAR · CRAFT · 특허 · 연구과제
+    url: /portfolio/research/
+  - slug: clear
+    title: CLEAR
+    meta: ASE 2026
+    summary: >-
+      Causal Context-Based Agentic Reasoning for Vulnerability Detection — VCKG · Multi-Agent
+    url: /portfolio/clear/
+  - slug: etri_clear
+    title: ETRI-CLEAR
+    meta: ASE 2026 · Schedule
+    summary: >-
+      CLEAR + ASE 2026 presentation schedule screenshot
+    url: /portfolio/etri_clear/
+  - slug: craft
+    title: CRAFT
+    meta: TDSC — Submitted
+    summary: >-
+      Causality-aware Reasoning and Adaptive Framework — CTVKG · Expert Agents · Causality Types
+    url: /portfolio/craft/
+  - slug: summary
+    title: Summary
+    meta: Copy & Paste
+    summary: >-
+      Degree · CLEAR · CRAFT · Project · 특허 · Career 요약
+    url: /portfolio/summary/
+  - slug: degree
+    title: Degree
+    meta: Empirical Study
+    summary: >-
+      Vulnerability Detection under Pairwise Evaluation — VPS · P-C / P-R 분석
+    url: /portfolio/degree/
+  - slug: etri_degree
+    title: ETRI-Degree
+    meta: Empirical Study · Abstract
+    summary: >-
+      Degree + English Abstract
+    url: /portfolio/etri_degree/
   - slug: resume
     title: Resume
     meta: Curriculum Vitae

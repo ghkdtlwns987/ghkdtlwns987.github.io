@@ -5,28 +5,38 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="google-site-verification" content="ySuTthoenSlXqEtzt8hB6pwWTjk8VETClBH9HGVU9bk">
   <meta name="naver-site-verification" content="cf55eb63845b6a8ef8e16b1601e3db0086a470e8">
+  {% if page.anonymous %}
+  <title>{{ page.title | escape }}</title>
+  <meta name="robots" content="{{ page.robots | default: 'noindex, nofollow' }}">
+  <meta name="description" content="{{ page.description | default: page.subtitle | strip_html | truncate: 160 | escape }}">
+  {% else %}
   {% seo %}
-  {% if site.google_analytics %}
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', '{{ site.google_analytics }}');
-  </script>
+  {% endif %}
+  {% if site.google_analytics and page.anonymous != true %}
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id={{ site.google_analytics }}"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', '{{ site.google_analytics }}');
+    </script>
   {% endif %}
   <script src="{{ '/assets/js/theme-init.js' | relative_url }}"></script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}?v=139">
+  <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}?v=140">
   <link rel="stylesheet" href="{{ '/assets/css/syntax.css' | relative_url }}?v=7">
+  {% unless page.anonymous %}
   <link rel="alternate" type="application/rss+xml" title="{{ site.title }}" href="{{ '/feed.xml' | relative_url }}">
+  {% endunless %}
 </head>
-<body data-poster-url="{{ '/poster/' | relative_url }}"{% if page.url == '/portfolio/' or page.url contains '/portfolio/' %} class="is-portfolio"{% endif %}>
+<body data-poster-url="{{ '/poster/' | relative_url }}" class="{% if page.url == '/portfolio/' or page.url contains '/portfolio/' %}is-portfolio{% endif %}{% if page.anonymous %} is-anonymous{% endif %}">
   <div class="site-wrapper">
+    {% unless page.anonymous %}
     {% include sidebar-left.html %}
+    {% endunless %}
 
     <div class="content-area content-area--wide">
       <main class="main-content">
@@ -36,6 +46,9 @@
         {% endif %}
 
         {% if page.url == '/poster/' %}
+          {% assign topbar_in_rail = true %}
+        {% endif %}
+        {% if page.anonymous %}
           {% assign topbar_in_rail = true %}
         {% endif %}
         {% unless topbar_in_rail %}

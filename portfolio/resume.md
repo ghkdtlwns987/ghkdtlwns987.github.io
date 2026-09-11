@@ -28,6 +28,9 @@ LLM for Software Engineering 및 AI-driven Software Security를 연구합니다.
 **2018.03 ~ 2024.02** / 학사 졸업
 
 # 02. Publications
+### An Empirical Study of Vulnerability Detection under Pairwise Evaluation
+Master’s Thesis, Department of Information Security
+
 ### CLEAR: CLEAR: Causal Context-Based Agentic Reasoning for Vulnerability Detection
 IEEE/ACM International Conference on Automated Software Engineering(Accepted)
 
@@ -77,7 +80,7 @@ IEEE Transactions on Dependable and Secure Computing(Submitted)
 
 - 발주처 : (재)한국연구재단
 - 역할 : 참여연구원
-- 기간 : 2025.08 ~ 현재
+- 기간 : 2026.03 ~ 현재
 
 ### 연구 목표
 거대 언어모델의 코드 및 맥락 이해 능력을 활용하여 안드로이드 소프트웨어의 취약점을 자동으로 탐지하고 수리하는 기술을 연구합니다.
@@ -88,7 +91,7 @@ IEEE Transactions on Dependable and Secure Computing(Submitted)
 - 외부 지식과 RAG를 활용한 LLM 기반 소프트웨어 취약점 탐지 연구
 - Multi-Agent Reasoning을 활용한 취약점 분석 및 검증 방법 연구
 - 취약점 발생 메커니즘을 고려한 인과 유형별 분석 방법 연구
-- 관련 연구 IEEE/ACM Automated Software Engineering 2026 채택
+- IEEE/ACM International Conference on Automated Software Engineering 2026 Accepted
 
 ---
 
@@ -108,7 +111,6 @@ IEEE Transactions on Dependable and Secure Computing(Submitted)
 - 소프트웨어 취약점의 발생 원인과 공격 맥락 분석
 
 
-<next></next>
 # 08. Technical Skills
 
 ### AI

@@ -4633,6 +4633,38 @@ a.post-series-link:hover {
   color: var(--link-hover);
 }
 
+/* anonymous portfolio — 프로필/내비/Contact 비노출 */
+body.is-anonymous .sidebar-left,
+body.is-anonymous .post-side-rail,
+body.is-anonymous .content-topbar,
+body.is-anonymous .poster-breadcrumb {
+  display: none !important;
+}
+
+body.is-anonymous .site-wrapper {
+  display: block;
+}
+
+body.is-anonymous .content-area,
+body.is-anonymous .main-content {
+  max-width: none;
+  width: 100%;
+  margin: 0 auto;
+}
+
+body.is-anonymous .post-layout,
+body.is-anonymous .post-layout--anonymous {
+  display: block;
+  grid-template-columns: none;
+  max-width: 52rem;
+  margin: 0 auto;
+  padding: 1.5rem 1.25rem 3rem;
+}
+
+body.is-anonymous .portfolio-article {
+  max-width: none;
+}
+
 /* Portfolio print / PDF (Cmd+P) — 웹 UI는 유지, 인쇄만 문서화 */
 @media print {
   @page {
