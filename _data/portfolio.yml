@@ -11,6 +11,12 @@ items:
     summary: >-
       Software Security · AI Agent Security — CLEAR · CRAFT · 침해사고 · Why Karrot
     url: /portfolio/karrot/
+  - slug: hyundai
+    title: Hyundai
+    meta: Security Portfolio
+    summary: >-
+      Software Security · AI Agent Security — CLEAR · CRAFT · 침해사고 · Why Karrot
+    url: /portfolio/hyundai/
   - slug: research
     title: Research
     meta: Research Portfolio
@@ -53,6 +59,12 @@ items:
     summary: >-
       Degree + English Abstract
     url: /portfolio/etri_degree/
+  - slug: kepco
+    title: KEPCO
+    meta: Master Thesis
+    summary: >-
+      Vulnerability Detection under Pairwise Evaluation — VPS · P-C / P-R 분석
+    url: /portfolio/kepco/
   - slug: resume
     title: Resume
     meta: Curriculum Vitae
