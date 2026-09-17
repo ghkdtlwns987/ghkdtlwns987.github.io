@@ -8,6 +8,8 @@ sitemap: false
 robots: noindex, nofollow
 ---
 
+**Authors:** Sungju Yun†, Sijune Hwang†, Yeonjoon Lee‡, Kyungtae Kang, Sungbin Park  
+
 ### Presentation
 
 {% include paper-figure.html src="portfolio/clear-ase-2026-presentation.png" alt="ASE 2026 CLEAR presentation schedule" caption="ASE 2026 — CLEAR presentation (Wed 14 Oct 2026, 12:00–12:15, Forum 3)" width="720" print="wide" %}
