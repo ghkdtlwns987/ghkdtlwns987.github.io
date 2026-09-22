@@ -1,213 +1,218 @@
 ---
 layout: portfolio
-title: 황시준(Sijune Hwang)
-subtitle: 
+title: 황시준 (Sijune Hwang)
+subtitle: LLM-based Agentic AI for Software Engineering
 permalink: /portfolio/research/
 sitemap: false
 robots: noindex, nofollow
 description: >-
-  황시준, 한양대학교 정보보호학과 석사과정. 외부 지식과 Multi-Agent Reasoning을 활용한 Agentic AI 연구 포트폴리오.
+  황시준, 한양대학교 정보보호학과 석사과정. 취약점의 인과 지식과 멀티에이전트 추론을 결합한 소프트웨어 취약점 탐지 연구.
 ---
 
-## LLM-based Agentic AI for Software Engineering
+취약 코드와 패치 코드의 미세한 차이를 구별하기 위해, **취약점의 인과 지식을 구조화하고 LLM의 검색·추론·검증 과정을 설계**합니다. 지식그래프와 역할별 에이전트를 결합한 취약점 탐지 프레임워크를 연구하고, 코드 쌍 평가와 구성 요소 제거 실험으로 효과를 검증하고 있습니다.
 
-외부 지식과 Multi-Agent Reasoning을 활용하여 LLM의 분석과 판단을 보완하고, 복잡한 문제를 스스로 해결할 수 있는 **Agentic AI** 시스템을 연구합니다.
+- **CLEAR · ASE 2026 채택 · 공동 1저자** — 인과 지식그래프와 멀티에이전트 추론을 결합한 취약점 탐지 프레임워크
+- **CRAFT · TDSC 투고 · 1저자** — 취약점 유형별 지식 표현과 전문가 추론으로 확장한 후속 연구
+- **석사학위 연구** — 취약·패치 코드 쌍 평가를 통한 기존 탐지 방법의 판단 특성과 실패 패턴 분석
 
-**Research Keywords**
+**Research Keywords**: LLM · Knowledge Graph · RAG · Multi-Agent Reasoning · Software Security
 
-- Large Language Model
-- Agentic AI
-- Multi-Agent Reasoning
-- Knowledge Graph
-- Retrieval Augmented Generation (RAG)
-- Software Engineering
+[연구 개요](#research-overview) · [CLEAR](#clear) · [CRAFT](#craft) · [학위논문](#pairwise-evaluation) · [특허](#patent) · [연구과제](#research-project)
 
-# 01. Research Overview
+## 01. Research Overview
+{: #research-overview }
 
-## Research Question
+**핵심 질문: LLM이 코드의 유사성을 넘어, 취약점이 발생하고 제거되는 조건을 구별하려면 무엇이 필요한가?**
 
-**LLM이 필요한 지식을 활용하고 스스로 추론, 검증하며 문제를 해결하려면 무엇이 필요한가?**
+취약 코드와 이를 수정한 코드는 대부분의 구조가 동일합니다. 따라서 개별 코드의 취약 여부를 맞히는 성능만으로는, 모델이 보안에 영향을 주는 작은 변화에 적절히 반응하는지 확인하기 어렵습니다.
 
-Retrieval-Augmented Generation (RAG)과 Multi-Agent Reasoning을 활용하여, LLM이 문제 해결에 필요한 외부 지식을 탐색하고 여러 Agent의 추론과 검증을 통해 신뢰할 수 있는 결과를 도출하는 Agentic AI를 연구합니다.
+이 문제를 다음 세 가지 관점에서 연구했습니다.
 
-LLM은 다양한 문제에서 뛰어난 성능을 보이지만, 모델이 가진 지식과 단일 추론 과정에만 의존할 경우 문제를 판단하는 데 필요한 정보를 충분히 활용하지 못하거나 잘못된 결론에 도달할 수 있습니다.
+| 연구 | 핵심 질문 | 결과물 |
+|:--|:--|:--|
+| Pairwise Evaluation | 취약 버전과 패치 버전을 모두 올바르게 판단하는가? | 코드 쌍 기반 비교 실험과 실패 패턴 분석 |
+| CLEAR | 취약점의 인과 지식을 제공하면 판단이 개선되는가? | VCKG와 검색·검증 기반 멀티에이전트 프레임워크 |
+| CRAFT | 취약점 유형에 맞게 지식과 추론을 달리하면 더 개선되는가? | CTVKG와 유형별 전문가 추론 프레임워크 |
 
-저는 이러한 한계를 보완하기 위해 **문제 해결에 필요한 지식을 어떻게 구조화하고 검색할 것인지**, **여러 Agent가 어떤 역할을 맡아 추론하고 검증할 것인지**에 집중했습니다.
+## 02. Research Outputs
 
-주요 연구로는 소프트웨어 취약점 탐지를 다루었습니다. 취약 코드와 패치 코드는 구조적으로 매우 유사하기 때문에 코드의 표면적인 특징만으로는 취약 여부를 정확하게 판단하기 어렵습니다.
+### 02-1. CLEAR
+{: #clear }
 
-이에 코드 자체만을 분석하는 것을 넘어 취약점이 발생하는 원인과 조건을 구조화하고, 필요한 지식을 선택적으로 검색하여 여러 Agent가 서로 다른 관점에서 분석하고 검증하는 Agentic AI 시스템을 설계했습니다.
+**Causal Context-Based Agentic Reasoning for Vulnerability Detection**
 
-이를 통해 특정 문제에 LLM을 단순히 적용하는 것이 아니라, 문제 해결에 필요한 지식과 추론,검증 과정을 함께 설계함으로써 LLM의 판단을 보완하는 방법을 연구하고 있습니다.
+**IEEE/ACM International Conference on Automated Software Engineering (ASE 2026) · Accepted**  
+**저자 역할: 공동 1저자**
 
-# 02. Publications
+[논문 (arXiv)](https://arxiv.org/abs/2608.03134) · [학회 페이지](https://conf.researchr.org/details/ase-2026/ase-2026-research-track/227/CLEAR-Causal-Context-Based-Agentic-Reasoning-for-Vulnerability-Detection)
 
-## 02_1. CLEAR: Causal Context-Based Agentic Reasoning for Vulnerability Detection
+> **대표 성과:** PrimeVul에서 P-C 19.17%를 달성했습니다. 비교한 멀티에이전트 방법인 VulTrial의 8.31% 대비 **130.7% 상대 개선**입니다. P-C는 취약 코드와 패치 코드를 모두 정확히 판단한 쌍의 비율입니다.
 
-**IEEE/ACM International Conference on Automated Software Engineering (ASE 2026)**
+#### 문제 정의
 
-- [Paper Link(arXiv)](https://arxiv.org/pdf/2608.03134)
-- [Conference Link](https://conf.researchr.org/details/ase-2026/ase-2026-research-track/227/CLEAR-Causal-Context-Based-Agentic-Reasoning-for-Vulnerability-Detection)
+기존 딥러닝 및 LLM 기반 탐지 방법은 구조적으로 유사한 취약 코드와 패치 코드를 구별하는 데 한계가 있었습니다. 외부 지식을 검색하더라도 현재 코드와 관련성이 낮은 증거가 포함되면 추론을 방해할 수 있습니다.
 
-### Problem Definition
+CLEAR에서는 **취약점의 발생 원인과 수정 논리를 구조화하고, 관련 있는 증거를 선별해 추론에 전달하는 방법**을 연구했습니다.
 
-기존 LLM은 왜 취약 코드와 패치 코드를 혼동하는가?
+#### 방법론: Causal Knowledge + Agentic Reasoning
 
-취약 코드와 이를 수정한 패치 코드는 대부분의 코드 구조가 동일하고 코드의 일부분만 변경됩니다. 기존의 Deep Learning 기법들은 이러한 미세한 차이를 제대로 식별하기 어렵고, LLM 역시 코드의 표면적인 패턴에 의존하기 때문에 미세한 차이를 구별하기 어렵습니다.
+{% include paper-figure.html src="portfolio/CLEAR_Overview.png" alt="CLEAR의 지식그래프 구축 및 멀티에이전트 추론 흐름" caption="CLEAR: 인과 지식그래프 구축 → 관련 증거 검색·필터링 → 가설 생성·검증·최종 판정" print="wide" %}
 
-이를 보완하기 위해 RAG, Single-Agent, Multi-Agent 등의 방법론이 고안되었지만, 기존 RAG는 검색된 정보를 단순히 제공하기 때문에 현재 코드와 관련성이 낮은 정보가 추론 과정에 포함될 수 있었습니다.
+**1. 취약점 정보를 인과 지식으로 구조화**
 
-## Research Question
+취약점의 정보를 네 가지 인과 요소로 분리하고, CWE 분류 정보와 함께 **Vulnerability Causal Knowledge Graph (VCKG)**로 표현했습니다.
 
-**LLM에게 취약점이 발생하는 원인과 관계를 구조화된 지식으로 제공하면 LLM의 추론 성능이 향상되지 않을까?**
-### Methodology
+| 인과 요소 | 표현하는 정보 |
+|:--|:--|
+| Entrypoint · 진입 지점 | 외부 입력이 유입되는 실행 지점이나 인터페이스 |
+| Precondition · 사전 조건 | 취약점이 도달·발현하기 위해 필요한 상태와 조건 |
+| Root Cause · 근본 원인 | 취약점을 발생시키는 논리적 오류 |
+| Fix Intent · 수정 의도 | 취약점의 원인이나 발생 조건을 제거하는 패치의 논리 |
 
-**Causal Knowledge + Agentic Reasoning**
+개별 사례의 Local VCKG를 구성한 뒤, 의미적으로 유사한 노드를 연결하는 Neighborhood Integration과 사례 간 인과 관계를 연결하는 Global Integration을 수행했습니다. 임베딩 유사성과 인과 관계를 함께 고려해 다른 취약점 사례의 지식도 활용하도록 구성했습니다.
 
-CLEAR는 취약점 탐지를 단순한 코드 패턴 분류가 아니라, **취약점이 발생하는 원인과 조건을 근거로 판단하는 문제**로 접근했습니다. 이를 위해 취약점 발생 원인과 관련 요소 간 관계를 구조화한 **Vulnerability Causal Knowledge Graph (VCKG)**를 설계하고, 현재 코드 분석에 필요한 인과 지식을 선택적으로 검색하여 Multi-Agent Reasoning의 근거로 활용했습니다.
+{% include paper-figure.html src="portfolio/clear-5-vckg-design.png" alt="VCKG의 인과 요소와 관계 설계" caption="VCKG의 노드·관계 구조: 진입 지점, 사전 조건, 근본 원인, 수정 의도 및 CWE" %}
 
-{% include paper-figure.html src="portfolio/CLEAR_Overview.png" alt="CLEAR Overview — VCKG construction and Multi-agent Reasoning" caption="CLEAR Overview: VCKG Construction -> Causal Knowledge Retrieval -> Multi-Agent Reasoning" %}
+<details markdown="1">
 
-### 1. Causal Knowledge Construction
+{% include paper-figure.html src="portfolio/clear-1-local-vckg.png" alt="개별 취약점의 Local VCKG 구성 예시" caption="1. Local VCKG: 개별 취약점의 인과 요소와 관계 구성" %}
 
-취약점별 원인과 조건을 **Local VCKG**로 구조화한 뒤,<br>
-관련 취약점의 지식을 **Neighborhood -> Global** 단계로 연결하여  
-다양한 취약점에서 활용할 수 있는 인과 지식으로 확장했습니다.
+{% include paper-figure.html src="portfolio/clear-2-neighborhood.png" alt="의미적으로 관련된 노드의 연결 과정" caption="2. Neighborhood Integration: 관련 인과 노드의 의미적 연결" %}
 
-{% include paper-figure-panel.html
-  cols=3
-  src1="portfolio/clear-1-local-vckg.png"
-  cap1="1. Local VCKG — 취약점별 원인과 조건 구조화"
-  alt1="Local Vulnerability Causal Knowledge Graph Example"
-  src2="portfolio/clear-2-neighborhood.png"
-  cap2="2. Neighborhood Integration — 관련 취약점 간 지식 연결"
-  alt2="Neighborhood Edge Integration"
-  src3="portfolio/clear-3-global-edge.png"
-  cap3="3. Global Integration — 전역 인과 지식으로 확장"
-  alt3="Global Edge Integration"
-  caption="VCKG Construction: Local -> Neighborhood -> Global"
-%}
+{% include paper-figure.html src="portfolio/clear-3-global-edge.png" alt="서로 다른 취약점 사례 간 인과 관계 연결" caption="3. Global Integration: 사례 간 인과 관계 연결" %}
 
-#### 최종 제작된 VCKG
+</details>
 
-위 과정을 거쳐 구축된 Vulnerability Causal Knowledge Graph입니다.
+**2. 관련 증거의 선택적 검색과 필터링**
 
-{% include paper-figure.html src="portfolio/clear-5-vckg-design.png" alt="Design of Vulnerability Causal Knowledge Graph" caption="최종 제작된 VCKG" width="480" %}
+Collector Agent는 분석 대상 코드의 인과 요소를 바탕으로 VCKG에서 관련 맥락을 검색합니다. 검색 결과를 그대로 전달하지 않고, 현재 코드와의 논리적 관련성을 검토해 불필요한 증거를 제거합니다. 이를 통해 검색 잡음이 후속 추론에 유입되는 것을 줄이도록 설계했습니다.
 
-### 2. Selective Knowledge Retrieval
+{% include paper-figure.html src="portfolio/clear-4-causal-retrieval.png" alt="분석 대상 코드에 필요한 인과 맥락 검색 및 필터링" caption="Selective Retrieval: 현재 코드와 관련 있는 인과 증거를 선별" %}
 
-구축된 VCKG 전체를 LLM에게 제공하는 대신,
-**현재 분석 대상과 관련된 Causal Context를 선택적으로 검색**하여 불필요한 정보가 추론 과정에 포함되는 것을 줄였습니다.
+**3. 역할별 멀티에이전트 추론**
 
-{% include paper-figure.html src="portfolio/clear-4-causal-retrieval.png" alt="Causal Context Retrieval" caption="Causal Context Retrieval — 분석에 필요한 인과 지식 선택" width="420" %}
+| 에이전트 | 역할 |
+|:--|:--|
+| Collector | 인과 맥락 검색 및 관련성이 낮은 증거 필터링 |
+| Claim | 선별된 증거를 근거로 취약점 가설 생성 |
+| Critic | 가설의 전제와 코드의 실제 조건을 대조하며 반박·검증 |
+| Judge | 가설과 반론, 증거를 종합해 취약 여부와 원인 판정 |
 
-### 3. Multi-Agent Reasoning
+**구현 도구:** Python · LangChain · GPT-4o-mini · all-MiniLM-L6-v2 임베딩
 
-검색된 Causal Context를 기반으로 여러 Agent가 역할을 나누어 취약 여부를 분석하고 검증하도록 추론 과정을 설계했습니다.
+#### 핵심 검증 결과
 
-- **Collector Agent** : Causal Context 수집
-- **Claim Agent** : 분석 결과 및 가설 생성
-- **Critic Agent** : 가설 반박,검증
-- **Judge Agent** : 분석 결과를 종합하여 최종 판단
+취약·패치 코드 쌍을 이용해 탐지 성능을 평가하고, VCKG 품질을 수동 검증했습니다. 그래프는 학습 데이터로 구축해 평가 대상 코드가 지식 구축 과정에 포함되지 않도록 분리했습니다.
 
-### 무엇을 증명했는가?
+| 방법 | PrimeVul P-C |
+|:--|--:|
+| Vul-RAG | 8.78% |
+| VulTrial | 8.31% |
+| **CLEAR** | **19.17%** |
 
-취약 코드와 패치 코드를 Pair로 구성하여 모델이 두 코드의 미세한 차이를 얼마나 잘 구분할 수 있는지 평가했으며, 제안한 VCKG를 수동 검증했습니다.  
-그 결과 Knowledge Graph의 품질과 제안 방법론이 LLM의 판단을 개선할 수 있음을 확인했습니다.
+비교 기준: CLEAR 공개 논문의 Table 1. **130.7%는 VulTrial 대비 상대 개선율**이며, 퍼센트포인트 증가량과 구분됩니다.
 
-### Research Contribution
-
-- 최초의 Vulnerability Causal Knowledge Graph 제안
-- Selective Knowledge Retrieval 구조 설계
-- LLM Multi-Agent Reasoning Pipeline 구현
-- SOTA 대비 약 **130.7%** 성능 개선
-
----
+연구 결과는 **VCKG, 선택적 검색·필터링, 역할별 추론을 결합한 프레임워크와 ASE 2026 채택 논문**으로 구체화했습니다.
 
 <next></next>
-## 02_2. CRAFT: Causality-aware Reasoning and Adaptive Framework for Vulnerability Types
 
-**IEEE Transactions on Dependable and Secure Computing (TDSC)** — Submitted  
-Paper Link: Under Review / Not Publicly Available
+### 02-2. CRAFT
+{: #craft }
 
-### Problem Definition
+**Causality-aware Reasoning and Adaptive Framework for Vulnerability Types**
 
-서로 다른 원인의 취약점을 일반화해 분석하는 것이 최선인가?
+**IEEE Transactions on Dependable and Secure Computing (TDSC) · Submitted**  
+**저자 역할: 1저자 · 원문 비공개**
 
-CLEAR에서는 취약점의 인과관계를 구조화하고 Multi-Agent Reasoning과 결합함으로써 기존 최고 성능 방법론을 큰 폭으로 상회했습니다. 그러나 후속 분석에서 취약점마다 발생 원인과 판단에 필요한 정보가 서로 다르다는 점에 주목했습니다.
+> **대표 성과:** PrimeVul에서 비교 기준인 CLEAR 대비 P-C **27.15% 상대 개선**을 확인하고, 별도로 구축한 CVE-Pair 데이터셋에서 일반화 성능을 검증했습니다.
 
-예를 들어 프로그램의 상태 변화에서 발생하는 취약점과 권한,보안 정책 위반으로 발생하는 취약점은, 확인해야 할 정보와 추론 방식이 다릅니다. 따라서 모든 취약점을 하나의 인과 구조와 동일한 추론 방식으로 분석하는 CLEAR 구조에는 한계가 있다고 판단했습니다.
+#### 문제 정의
 
-## Research Question
+CLEAR의 후속 연구에서는 취약점마다 발생 원리와 판단에 필요한 정보가 다르다는 점에 주목했습니다. 상태 변화에 따른 결함과 권한·보안 정책 위반은 확인해야 할 조건이 다르므로, 공통된 인과 표현과 추론 방식만으로는 유형별 특성을 충분히 반영하기 어렵습니다.
 
-**취약점의 발생 메커니즘에 따라 지식 표현과 Agent의 추론 방식을 다르게 설계하면 어떨까?**
+이에 **취약점 유형에 따라 지식 표현과 전문가의 추론 방식을 함께 조정하는 방법**을 연구했습니다.
 
-### Methodology
+#### 방법론: Causality-Typed Knowledge + Expert Reasoning
 
-**Causality-Typed Knowledge + Expert Reasoning**
+취약점을 **State · Execution · Constraint · Policy**의 네 가지 인과 유형으로 재분류하고, 유형별 정보를 표현하는 **Causality-Typed Vulnerability Knowledge Graph (CTVKG)**를 설계했습니다. 여기에 **Expert–Claim–Critic–Judge** 추론 파이프라인을 결합해, 유형별 전문가의 분석을 바탕으로 주장 구성·비판적 검토·최종 판정을 수행하도록 했습니다.
 
-취약점의 발생 메커니즘을 네 가지 Causality Type으로 재분류했고, 각 유형에 필요한 지식을 구조화하기 위해 **Causality-Typed Vulnerability Knowledge Graph (CTVKG)**를 설계했습니다. 또한 취약점 유형에 따라 전문화된 Agent가 분석하도록 Multi-Agent Reasoning 구조를 고도화했습니다.
+| 구분 | CLEAR | CRAFT |
+|:--|:--|:--|
+| 지식 표현 | 공통 인과 요소 기반 VCKG | 네 가지 인과 유형을 반영한 CTVKG |
+| 추론 구성 | 검색 증거 기반 Claim–Critic–Judge | 유형별 Expert 분석을 결합한 Claim–Critic–Judge |
+| 검증 초점 | 인과 지식이 탐지 판단에 미치는 효과 | 유형별 표현과 전문가 추론의 추가 기여 |
 
-### 무엇을 증명했는가?
+#### 핵심 검증 결과
 
-CLEAR 대비 Pairwise Correct Prediction (P-C) **27.15%** 상대 개선을 확인했습니다. Ablation Study를 통해 제안 방법이 각각 성능 향상에 기여한다는 점도 정량적으로 검증했습니다. 이는 문제에 맞게 Agent의 역할과 정보 흐름을 설계하는 것이 중요하다는 점을 시사합니다.
+- **탐지 성능:** PrimeVul의 11개 CWE를 대상으로 CLEAR 대비 P-C 27.15% 상대 개선을 확인했습니다.
+- **외부 데이터 평가:** 독립적으로 구축한 CVE-Pair 데이터셋에서도 일반화 성능을 검증했습니다.
+- **구성 요소 분석:** 인과 유형별 표현을 제거한 실험에서 P-C가 21.31에서 2.99로 하락했습니다. 전문가 기반 추론의 기여도 별도로 분석했습니다.
+
+CRAFT의 개선율은 해당 연구의 비교 실험을 기준으로 합니다. 연구별 평가 구성이 다를 수 있으므로 CLEAR 공개 논문의 점수와 직접 결합해 해석하지 않습니다.
+
+이를 통해 **문제에 맞는 지식 표현과 에이전트 역할 설계의 효과를 정량적으로 검증한 후속 프레임워크**를 제안했습니다.
 
 <next></next>
-## 02_3. An Empirical Study of Vulnerability Detection under Pairwise Evaluation
-Master’s Thesis
 
-### Problem Definition
+### 02-3. Pairwise Evaluation
+{: #pairwise-evaluation }
 
-기존 평가 방식은 AI 기반 소프트웨어 취약점 탐지 모델의 실제 식별 능력을 충분히 검증하고 있는가?
+**An Empirical Study of Vulnerability Detection under Pairwise Evaluation**  
+석사학위 연구
 
-기존 연구에서는 취약 코드와 정상 코드를 독립적인 Sample로 평가하고 Accuracy, F1-score 등의 지표로 성능을 측정하는 경우가 많습니다. 그러나 실제 취약점 패치는 대부분의 코드가 유지된 상태에서 일부 보안 관련 코드만 변경되기 때문에, 이러한 평가만으로는 모델이 취약점을 제거한 코드 변화에 적절하게 반응하는지 충분히 확인하기 어렵습니다.
+#### 문제 정의
 
-### Research Question
+개별 코드의 Accuracy나 F1-score만으로는 모델이 보안에 영향을 주는 코드 변화에 반응하는지 충분히 확인하기 어렵습니다. 취약 버전은 맞히더라도 패치된 버전을 계속 취약하다고 판단할 수 있기 때문입니다.
 
-취약 코드와 패치 코드를 하나의 Pair로 평가하면 기존 평가에서 드러나지 않는 취약점 탐지 모델의 판단 특성과 실패 패턴을 확인할 수 있지 않을까?
+이 연구에서는 **동일 함수의 취약 버전과 패치 버전을 함께 평가해, 기존 방법의 식별 능력과 실패 패턴을 분석**했습니다.
 
-### Methodology
+#### 방법론: Vulnerable–Patched Pairwise Evaluation
 
-Vulnerable–Patched Pairwise Evaluation
+코드 쌍의 예측 결과를 다음 네 가지 유형으로 구분하고, Pretrained Code Model, LLM, RAG, Multi-Agent 방법론을 비교했습니다.
 
-동일 함수의 취약 버전과 패치 버전을 하나의 Pair로 구성하고, 모델이 두 버전을 정확하게 구별하는지를 평가했습니다.
+| 지표 | 예측 결과 | 해석 |
+|:--|:--|:--|
+| P-C · Correct | 취약 → 취약 / 패치 → 정상 | 두 버전 모두 올바르게 판단 |
+| P-V · Vulnerable | 취약 → 취약 / 패치 → 취약 | 패치 이후에도 취약하다고 판단 |
+| P-B · Benign | 취약 → 정상 / 패치 → 정상 | 원래 취약점도 탐지하지 못함 |
+| P-R · Reversed | 취약 → 정상 / 패치 → 취약 | 두 버전의 판단이 뒤바뀜 |
 
-예측 결과를 **P-C (Correct), P-V (Vulnerable), P-B (Benign), P-R (Reversed)**의 네 유형으로 구분하고, 올바른 판단과 역전된 판단의 차이를 측정하는 **VPS (Vulnerability Pairwise Score)**를 활용하여 Pretrained Code Model, LLM, RAG, Multi-Agent 등 다양한 취약점 탐지 방법론을 비교했습니다.
+또한 **VPS = P-C − P-R**을 활용해 올바른 판단과 역전된 판단을 함께 분석했습니다.
 
-### 무엇을 증명했는가?
+#### 핵심 검증 결과
 
-실험 결과, 기존 방법들은 일반적인 분류 성능과 별개로 취약 코드와 패치 코드를 동시에 정확하게 구별하는 데 상당한 한계가 있음을 확인했습니다.
+기존 방법들이 일반적인 분류 성능과 별개로 취약 코드와 패치 코드를 모두 올바르게 구별하는 데 한계가 있음을 확인했습니다. 이를 통해 **개별 샘플의 탐지 성능과 함께, 보안 관련 코드 변화에 대한 판단의 일관성을 평가할 필요**를 제시했습니다.
 
-이를 통해 AI 기반 취약점 탐지 기술을 평가할 때 단순한 개별 Sample의 탐지 정확도뿐만 아니라, 보안에 영향을 주는 코드 변화에 모델의 판단이 적절하게 반응하는지를 함께 검증할 필요가 있음을 제시했습니다.
+이 평가 관점은 CLEAR와 CRAFT의 성능을 검증하고, 탐지 실패가 어떤 형태로 발생하는지 해석하는 기준으로 이어집니다.
 
-# 03. Patent
+## 03. Patent
+{: #patent }
 
 | 항목 | 내용 |
 |:--|:--|
-| 연구과제 명 | 지식 그래프에 기반한 소프트웨어 취약점 탐지 방법 및 이를 위한 컴퓨터 장치 |
+| 발명의 명칭 | 지식 그래프에 기반한 소프트웨어 취약점 탐지 방법 및 이를 위한 컴퓨터 장치 |
 | 출원번호 | 10-2025-0199398 |
 | 출원일 | 2025.12.15 |
 | 상태 | 출원 |
 | 발명자 | 황시준 |
 
-<br>
-<br>
-# 04. Research Projects
+## 04. Research Project
+{: #research-project }
+
+**거대 언어 모델 기반 안드로이드 취약점 탐지 및 자동 수리**
 
 | 항목 | 내용 |
 |:--|:--|
-| 과제명 | 거대 언어 모델 기반 안드로이드 취약점 탐지 및 자동 수리 |
-| 발주기관명 | (재)한국연구재단 |
-| 연구기간 | 2025.08.01 ~ |
+| 지원기관 | (재)한국연구재단 |
+| 참여기간 | 2025.08.01 ~ |
 | 역할 | 참여연구원 |
 
-### 연구 목표
+### 과제 목표
 
-거대 언어모델(LLM)의 맥락, 코드 이해 능력이 향상됨에 따라, 이를 활용하여 안드로이드 앱 내 취약점을 자동으로 탐지하고 수리하는 연구.
+LLM의 코드 이해와 맥락 분석 능력을 활용해 안드로이드 앱의 취약점을 자동으로 탐지하고 수리하는 기술을 연구합니다.
 
-### 수행 내용
+### 수행 범위와 연계 성과
 
-- 취약점을 4개의 인과관계로 구조화
-- 구조화한 인과관계를 인과지식 그래프로 구현
-- 최신 SOTA 모델 대비 130.7% 성능 향상
-- IEEE/ACM International Conference on Automated Software Engineering 2026 Accepted
+과제 내 **취약점 탐지를 위한 인과 지식 표현과 LLM 추론 구조 연구**에 참여했습니다. 취약점 정보를 진입 지점·사전 조건·근본 원인·수정 의도의 네 가지 요소로 구조화하고, 지식그래프를 탐지 추론에 연결했습니다.
+
+관련 결과물인 **CLEAR는 ASE 2026에 채택**되었습니다. 탐지 성능과 비교 기준은 위 CLEAR 항목에 정리했습니다.
