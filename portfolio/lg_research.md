@@ -1,7 +1,7 @@
 ---
 layout: portfolio
 title: "Portfolio"
-permalink: /portfolio/clear/
+permalink: /portfolio/lg_research/
 anonymous: true
 sitemap: false
 robots: noindex, nofollow
@@ -19,11 +19,11 @@ robots: noindex, nofollow
 
 ## Research Question
 
-> 취약점의 발생 조건·근본 원인·수정 의도를 구조화된 지식으로 제공하고, 해당 코드와 관련된 경로만 검색한다면 LLM이 취약 버전과 패치 버전을 더 정확히 구별할 수 있을까?
+> 취약점의 발생 조건/근본 원인/수정 의도를 구조화된 지식으로 제공하고, 해당 코드와 관련된 경로만 검색한다면 LLM이 취약 버전과 패치 버전을 더 정확히 구별할 수 있을까?
 
 ## Methodology — Causal Knowledge + Agentic Reasoning
 
-CLEAR는 **Vulnerability Causal Knowledge Graph(VCKG)**를 오프라인으로 구축하고, 분석 대상 코드에 필요한 인과 맥락을 선택적으로 검색합니다. 이후 Collector, Claim, Critic, Judge 에이전트가 검색된 근거를 사용해 가설을 만들고 반박·검증한 뒤 최종 판단을 내립니다.
+CLEAR는 **Vulnerability Causal Knowledge Graph(VCKG)**를 오프라인으로 구축하고, 분석 대상 코드에 필요한 인과 맥락을 선택적으로 검색합니다. 이후 Collector, Claim, Critic, Judge 에이전트가 검색된 근거를 사용해 가설을 만들고 반박/검증한 뒤 최종 판단을 내립니다.
 
 {% include paper-figure.html src="portfolio/CLEAR_Overview.png" alt="VCKG 구축, 인과 맥락 검색, 다중 에이전트 검증으로 이어지는 CLEAR 전체 구조" caption="CLEAR: 그래프 구축 → 관련 인과 지식 검색 → 다중 에이전트 검증" %}
 
@@ -36,7 +36,7 @@ VCKG는 취약점의 핵심 요소를 **Entrypoint, Precondition, Root Cause, Fi
 {% include paper-figure-panel.html
   cols=3
   src1="portfolio/clear-1-local-vckg.png"
-  cap1="Local VCKG — 사례별 원인·조건·수정 의도 표현"
+  cap1="Local VCKG — 사례별 원인/조건/수정 의도 표현"
   alt1="Local Vulnerability Causal Knowledge Graph"
   src2="portfolio/clear-2-neighborhood.png"
   cap2="Neighborhood — 관련 인과 요소 연결"
@@ -47,7 +47,7 @@ VCKG는 취약점의 핵심 요소를 **Entrypoint, Precondition, Root Cause, Fi
   caption="취약점 사례에서 재사용 가능한 인과 지식으로 확장하는 과정"
 %}
 
-{% include paper-figure.html src="portfolio/clear-5-vckg-design.png" alt="VCKG 노드와 관계 유형" caption="VCKG의 노드·관계 설계" width="480" %}
+{% include paper-figure.html src="portfolio/clear-5-vckg-design.png" alt="VCKG 노드와 관계 유형" caption="VCKG의 노드/관계 설계" width="480" %}
 
 ### 2. Selective Knowledge Retrieval — 현재 판단에 필요한 맥락만 검색
 
@@ -81,22 +81,22 @@ VCKG는 취약점의 핵심 요소를 **Entrypoint, Precondition, Root Cause, Fi
 
 | 팀의 연구 과제 | CLEAR에서 검증한 경험 | 기업 지식으로 확장할 연구 질문 |
 |---|---|---|
-| **Knowledge Graph 생성·구조화** | 원천 자료에서 다섯 유형의 인과 요소를 추출하고 Local → Neighborhood → Global 그래프로 통합 | 문서·테이블·DB에서 추출한 개체와 관계를 도메인 스키마에 어떻게 정렬할 것인가? |
+| **Knowledge Graph 생성/구조화** | 원천 자료에서 다섯 유형의 인과 요소를 추출하고 Local → Neighborhood → Global 그래프로 통합 | 문서/테이블/DB에서 추출한 개체와 관계를 도메인 스키마에 어떻게 정렬할 것인가? |
 | **Graph 기반 검색과 QA** | 현재 질의에 필요한 Causal Context를 선택해 LLM 추론의 근거로 제공 | 여러 관계를 거친 검색 결과가 질문에 충분하고 관련성이 있는지 어떻게 검증할 것인가? |
-| **신뢰할 수 있는 추론** | Claim–Critic–Judge가 근거를 상호 검토하고, 쌍별 평가·제거 실험으로 기여를 검증 | 검색된 경로의 근거와 답변의 논리적 일관성을 어떤 기준으로 검사할 것인가? |
-| **Applied Research** | 평가의 허점을 문제로 정의하고, 그래프 설계·검색·추론·실험으로 연결 | 실제 사용 환경의 실패 사례를 연구 가설과 재현 가능한 평가로 어떻게 바꿀 것인가? |
+| **신뢰할 수 있는 추론** | Claim–Critic–Judge가 근거를 상호 검토하고, 쌍별 평가/제거 실험으로 기여를 검증 | 검색된 경로의 근거와 답변의 논리적 일관성을 어떤 기준으로 검사할 것인가? |
+| **Applied Research** | 평가의 허점을 문제로 정의하고, 그래프 설계/검색/추론/실험으로 연결 | 실제 사용 환경의 실패 사례를 연구 가설과 재현 가능한 평가로 어떻게 바꿀 것인가? |
 
-**CLEAR는 취약점이라는 한 도메인에서, 흩어진 자료를 관계가 있는 지식으로 바꾸고 필요한 근거만 검색해 답을 검증한 사례**입니다. LG AI연구원이 다루는 기업 지식에서도 문서·표·DB 사이의 의미 관계를 모델링하고, 근거가 추적 가능한 답을 만드는 데 이 연구 경험을 적용할 수 있습니다.
+**CLEAR는 취약점이라는 한 도메인에서, 흩어진 자료를 관계가 있는 지식으로 바꾸고 필요한 근거만 검색해 답을 검증한 사례**입니다. LG AI연구원이 다루는 기업 지식에서도 문서/표/DB 사이의 의미 관계를 모델링하고, 근거가 추적 가능한 답을 만드는 데 이 연구 경험을 적용할 수 있습니다.
 
 ### 다음 단계: 형식적 Ontology와 제품 환경으로 확장
 
-CLEAR의 VCKG는 도메인별 노드·관계를 설계한 **인과 지식그래프**입니다. 이를 RDF/OWL 기반 온톨로지 구현이나 SHACL 제약 검증을 완료한 연구로 소개하지는 않습니다. 기업 데이터에 적용할 때는 먼저 개체·관계 유형을 정식 스키마에 매핑하고, 관계의 정의역·치역 및 필수 조건을 검증하는 연구가 필요합니다. 그다음 GraphRAG의 검색 경로 품질과 답변 근거성을 평가하고, 오프라인 그래프 구축·온라인 검색·추론 단계를 서비스/API 환경에서 분리해 실험하고 싶습니다.
+CLEAR의 VCKG는 도메인별 노드/관계를 설계한 **인과 지식그래프**입니다. 이를 RDF/OWL 기반 온톨로지 구현이나 SHACL 제약 검증을 완료한 연구로 소개하지는 않습니다. 기업 데이터에 적용할 때는 먼저 개체/관계 유형을 정식 스키마에 매핑하고, 관계의 정의역/치역 및 필수 조건을 검증하는 연구가 필요합니다. 그다음 GraphRAG의 검색 경로 품질과 답변 근거성을 평가하고, 오프라인 그래프 구축/온라인 검색/추론 단계를 서비스/API 환경에서 분리해 실험하고 싶습니다.
 
 ## Research Contribution
 
 - 취약점의 **Entrypoint → Precondition → Root Cause → Fix Intent**를 표현하는 VCKG 제안
 - 사례 내부와 사례 사이의 인과 지식을 연결하는 그래프 구축 방식 설계
 - 관련 인과 맥락의 선택적 검색과 Collector–Claim–Critic–Judge 추론 파이프라인 구현
-- 취약 코드·패치 코드 쌍별 평가 및 제거 실험을 통해 각 구성 요소의 효과 검증
+- 취약 코드/패치 코드 쌍별 평가 및 제거 실험을 통해 각 구성 요소의 효과 검증
 
-**Paper:** [CLEAR: Causal Context-Based Agentic Reasoning for Vulnerability Detection](https://arxiv.org/abs/2608.03134) · [ASE 2026 Research Track](https://conf.researchr.org/track/ase-2026/ase-2026-research-track)
+**Paper:** [CLEAR: Causal Context-Based Agentic Reasoning for Vulnerability Detection](https://arxiv.org/abs/2608.03134) / [ASE 2026 Research Track](https://conf.researchr.org/track/ase-2026/ase-2026-research-track)
