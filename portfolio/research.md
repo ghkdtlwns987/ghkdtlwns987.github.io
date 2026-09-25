@@ -16,7 +16,7 @@ description: >-
 
 - **CLEAR · ASE 2026 채택 · 공동 1저자** — 인과 지식그래프와 멀티에이전트 추론을 결합한 취약점 탐지 프레임워크
 - **CRAFT · TDSC 투고 · 1저자** — 취약점 유형별 지식 표현과 전문가 추론으로 확장한 후속 연구
-- **석사학위 연구** — 취약·패치 코드 쌍 평가를 통한 기존 탐지 방법의 판단 특성과 실패 패턴 분석
+- **석사학위 논문** — 취약·패치 코드 쌍 평가를 통한 기존 탐지 방법의 판단 특성과 실패 패턴 분석
 
 **Research Keywords**: LLM · Knowledge Graph · RAG · Multi-Agent Reasoning · Software Security
 
@@ -49,13 +49,16 @@ description: >-
 
 [논문 (arXiv)](https://arxiv.org/abs/2608.03134) · [학회 페이지](https://conf.researchr.org/details/ase-2026/ase-2026-research-track/227/CLEAR-Causal-Context-Based-Agentic-Reasoning-for-Vulnerability-Detection)
 
-> **대표 성과:** PrimeVul에서 P-C 19.17%를 달성했습니다. 비교한 멀티에이전트 방법인 VulTrial의 8.31% 대비 **130.7% 상대 개선**입니다. P-C는 취약 코드와 패치 코드를 모두 정확히 판단한 쌍의 비율입니다.
+> **대표 성과:** PrimeVul에서 P-C 19.17%를 달성했으며, SOTA 라고 알려져 있는 VulTrial대비 **성능을 130.7% 개선**했습니다.
 
 #### 문제 정의
 
-기존 딥러닝 및 LLM 기반 탐지 방법은 구조적으로 유사한 취약 코드와 패치 코드를 구별하는 데 한계가 있었습니다. 외부 지식을 검색하더라도 현재 코드와 관련성이 낮은 증거가 포함되면 추론을 방해할 수 있습니다.
+1. 기존 딥러닝 및 LLM 기반 탐지 방법은 구조적으로 유사한 취약 코드와 패치 코드를 구별하는 데 한계가 있었습니다. 외부 지식을 검색하더라도 현재 코드와 관련성이 낮은 증거가 포함되면 추론을 방해할 수 있습니다.
 
-CLEAR에서는 **취약점의 발생 원인과 수정 논리를 구조화하고, 관련 있는 증거를 선별해 추론에 전달하는 방법**을 연구했습니다.
+2. Retrieval Noise, Reasoning Bias 를 해결하기 위해 취약점 정보를 인과 단위로 분리해 Knowledge Graph 형태로 제작했습니다. 나아가, 별도의 Agent 를 배치해, 관련 없는 정보는 필터링되도록 설계했습니다.
+
+
+따라서 본 논문은 **취약점의 발생 원인과 수정 논리를 구조화하고, 관련 있는 증거를 선별해 추론에 전달하는 방법**을 연구했습니다.
 
 #### 방법론: Causal Knowledge + Agentic Reasoning
 
