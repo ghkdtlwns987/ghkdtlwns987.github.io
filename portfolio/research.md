@@ -9,7 +9,8 @@ description: >-
   황시준, 한양대학교 정보보호학과 석사과정. 취약점의 인과 지식과 멀티에이전트 추론을 결합한 소프트웨어 취약점 탐지 연구.
 ---
 
-**Blog:** [https://ghkdtlwns987.github.io](https://ghkdtlwns987.github.io/)
+**Blog:** [https://ghkdtlwns987.github.io](https://ghkdtlwns987.github.io/)  
+
 취약 코드와 패치 코드의 미세한 차이를 구별하기 위해, **취약점의 인과 지식을 구조화하고 LLM의 검색·추론·검증 과정을 설계**합니다. 지식그래프와 역할별 에이전트를 결합한 취약점 탐지 프레임워크를 연구하고, 코드 쌍 평가와 구성 요소 제거 실험으로 효과를 검증하고 있습니다.
 
 
