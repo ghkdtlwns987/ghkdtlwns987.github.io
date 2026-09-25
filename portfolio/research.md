@@ -111,7 +111,10 @@ Collector Agent는 분석 대상 코드의 인과 요소를 바탕으로 VCKG에
 
 2. Graph Quality 검증 결과, 인과관계 특징을 띄고, 의미적인 문맥이 반영된 Graph 임을 확인했습니다.
 
-연구 결과는 **VCKG, 선택적 검색·필터링, 역할별 추론을 결합한 프레임워크로, IEEE/ACM International Conference on Automated Software Engineering 2026** 에 최종 채택되었습니다.
+#### Conclusion
+- 취약점 지식을 4단계의 인과지식으로 분해해 Knowledge Graph로 구조화한 최초의 연구입니다.
+- SOTA 모델 대비 130.7% 성능 향상을 보였습니다.
+- 해당 연구는 IEEE/ACM International Conference on Automated Software Engineering 2026에 최종 채택되었습니다.
 
 <next></next>
 
@@ -147,9 +150,10 @@ CLEAR의 후속 연구에서는 취약점마다 발생 원리와 판단에 필�
 - **외부 데이터 평가:** 독립적으로 구축한 CVE-Pair 데이터셋에서도 일반화 성능을 검증했습니다.
 - **구성 요소 분석:** 인과 유형별 표현을 제거한 실험에서 P-C가 21.31에서 2.99로 하락했습니다. 전문가 기반 추론의 기여도 별도로 분석했습니다.
 
-CRAFT의 개선율은 해당 연구의 비교 실험을 기준으로 합니다. 연구별 평가 구성이 다를 수 있으므로 CLEAR 공개 논문의 점수와 직접 결합해 해석하지 않습니다.
-
-이를 통해 **문제에 맞는 지식 표현과 에이전트 역할 설계의 효과를 정량적으로 검증한 후속 프레임워크**를 제안했습니다.
+#### Conclusion
+- 문제에 맞는 지식 표현과 에이전트 역할 설계의 효과를 정량적으로 검증한 후속 프레임워크를 제안했습니다.
+- 이전 연구인 CLEAR 대비 27.15% 성능 향상을 달성했습니다.
+- IEEE Transactions on Dependable and Secure Computing 에 제출한 상태입니다.
 
 <next></next>
 
