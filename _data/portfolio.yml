@@ -17,6 +17,12 @@ items:
     summary: >-
       Software Security · AI Agent Security — CLEAR · CRAFT · 침해사고 · Why Karrot
     url: /portfolio/hyundai/
+  - slug: security
+    title: Security
+    meta: 정보보호 Portfolio
+    summary: >-
+      취약점 분석 · 침해대응 · CLEAR · CRAFT — Unreal Fuzzing · HCCC
+    url: /portfolio/security/
   - slug: research
     title: Research
     meta: Research Portfolio
