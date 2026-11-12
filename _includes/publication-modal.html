@@ -3,7 +3,8 @@
 {% endcomment %}
 <div class="pub-modal-backdrop" id="pub-modal-backdrop" aria-hidden="true"></div>
 
-{% assign pub_sections = site.data.publications.international | concat: site.data.publications.domestic %}
+{% include all-publications.html %}
+{% assign pub_sections = all_pubs %}
 {% for pub in pub_sections %}
   {% assign has_detail = false %}
   {% if pub.summary and pub.summary.size > 0 %}

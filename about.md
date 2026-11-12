@@ -26,6 +26,35 @@ description: >-
 </section>
 
 <section>
+  <h2>Publications</h2>
+
+  <h3 class="cv-pub-kind">International Conference</h3>
+  {% for pub in site.data.publications.international %}
+    {% if pub.cv %}
+      {% include cv-pub.html pub=pub %}
+    {% endif %}
+  {% endfor %}
+
+  <h3 class="cv-pub-kind">Journal</h3>
+  {% for pub in site.data.publications.journals %}
+    {% if pub.cv %}
+      {% include cv-pub.html pub=pub %}
+    {% endif %}
+  {% endfor %}
+
+  <h3 class="cv-pub-kind">Thesis</h3>
+  {% for pub in site.data.publications.theses %}
+    {% if pub.cv %}
+      {% include cv-pub.html pub=pub %}
+    {% endif %}
+  {% endfor %}
+
+  <p class="cross-link">
+    <a href="{{ '/publications/' | relative_url }}">All publications →</a>
+  </p>
+</section>
+
+<section>
   <h2>Professional Experience</h2>
 
   <div class="timeline-item">

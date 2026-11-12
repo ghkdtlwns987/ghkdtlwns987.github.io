@@ -21,6 +21,15 @@ description: >-
 </section>
 
 <section>
+  <h2>Journal</h2>
+  <div class="pub-list">
+    {% for pub in site.data.publications.journals %}
+      {% include publication-card.html pub=pub %}
+    {% endfor %}
+  </div>
+</section>
+
+<section>
   <h2>Domestic Conferences</h2>
   <div class="pub-list">
     {% for pub in site.data.publications.domestic %}

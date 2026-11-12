@@ -1,0 +1,13 @@
+{% comment %}
+  Concatenate all publication lists into all_pubs.
+{% endcomment %}
+{% assign all_pubs = site.data.publications.international %}
+{% if site.data.publications.journals %}
+  {% assign all_pubs = all_pubs | concat: site.data.publications.journals %}
+{% endif %}
+{% if site.data.publications.theses %}
+  {% assign all_pubs = all_pubs | concat: site.data.publications.theses %}
+{% endif %}
+{% if site.data.publications.domestic %}
+  {% assign all_pubs = all_pubs | concat: site.data.publications.domestic %}
+{% endif %}

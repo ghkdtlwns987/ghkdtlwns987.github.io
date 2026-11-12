@@ -1,5 +1,6 @@
 international:
   - slug: clear-ase-2026
+    cv: true
     featured: true
     headline: "CLEAR: Causal Context-based Agentic Reasoning for Vulnerability Detection"
     title: "CLEAR: Causal Context-based Agentic Reasoning for Vulnerability Detection"
@@ -40,6 +41,8 @@ international:
     links:
       - label: arXiv
         url: "https://arxiv.org/abs/2608.03134"
+      - label: Conference
+        url: "https://conf.researchr.org/details/ase-2026/ase-2026-research-track/227/CLEAR-Causal-Context-Based-Agentic-Reasoning-for-Vulnerability-Detection"
       # - label: Code
       #   url: "https://github.com/..."
       # - label: Slides
@@ -54,6 +57,71 @@ international:
         caption: CLEAR 프레임워크 개요
       - src: figure/paper/clear2.png
         caption: VCKG 및 Multi-Agent Reasoning 구조
+
+journals:
+  - slug: craft-tdsc-2026
+    cv: true
+    headline: "CRAFT: Causality-aware Reasoning and Adaptive Framework for Vulnerability Types"
+    title: "CRAFT: Causality-aware Reasoning and Adaptive Framework for Vulnerability Types"
+    date: "2026.08.31"
+    venue: "IEEE Transactions on Dependable and Secure Computing (TDSC)"
+    status: "Under Review"
+    authors: "Sungju Yun*, Sijune Hwang*, Yeonjoon Lee, Kyungtae Kang, Sungbin Park"
+    badges:
+      - type: intl
+        label: Journal
+      - type: venue
+        label: TDSC
+      - type: year
+        label: "2026"
+      - type: author
+        label: First Author
+      - type: submitted
+        label: Under Review
+    news:
+      date: "Aug 2026"
+      text: |
+        CRAFT: Causality-aware Reasoning and Adaptive Framework for Vulnerability Types has been submitted to
+        IEEE Transactions on Dependable and Secure Computing (TDSC).
+      badges:
+        - Paper
+      tags:
+        - TDSC
+        - "2026"
+    summary:
+      - >
+          ASE 2026 CLEAR의 Journal Extension으로, 취약점 발생 메커니즘을 Causality Type으로 재분류하고
+          Causality-Typed Vulnerability Knowledge Graph(CTVKG)와 유형별 Expert Agent를 결합한
+          적응형 취약점 탐지 프레임워크를 제안하였습니다.
+      - >
+          모든 취약점을 하나의 인과 구조로 분석하던 CLEAR의 한계를 보완하기 위해,
+          유형별 지식 표현과 Multi-Agent Reasoning을 분리 설계하고
+          CLEAR 대비 Pairwise Correct Prediction(P-C) 상대 개선을 확인하였습니다.
+    contributions:
+      - Causality Type 기반 취약점 지식 표현(CTVKG) 설계
+      - Causality-specific Expert Multi-Agent Reasoning
+      - 독립 외부 Dataset 및 LLM Backbone에 대한 일반화·강건성 평가
+
+theses:
+  - slug: master-thesis-2026
+    cv: true
+    headline: "인과 지식 기반 Agentic Reasoning을 활용한 소프트웨어 취약점 탐지"
+    title: "인과 지식 기반 Agentic Reasoning을 활용한 소프트웨어 취약점 탐지"
+    title_en: "Causal Knowledge-based Agentic Reasoning for Software Vulnerability Detection"
+    date: "2026"
+    venue: "석사학위논문, 한양대학교 일반대학원 정보보호학과"
+    authors: "Sijune Hwang"
+    badges:
+      - type: venue
+        label: Thesis
+      - type: year
+        label: "2026"
+      - type: author
+        label: Sole Author
+    summary:
+      - >
+          소프트웨어 취약점의 원인·조건을 인과 지식 그래프로 구조화하고,
+          Multi-Agent Reasoning으로 검증하는 Agentic AI 취약점 탐지 연구를 석사학위논문으로 정리하였습니다.
 
 domestic:
   - slug: cisc-s-2025

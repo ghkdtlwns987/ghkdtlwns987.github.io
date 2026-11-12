@@ -1,0 +1,48 @@
+{% comment %}
+  CV bibliography entry.
+  Usage: {% include cv-pub.html pub=pub %}
+{% endcomment %}
+{% assign pub = include.pub %}
+<article class="cv-pub">
+  {% if pub.badges %}
+  <div class="pub-badges">
+    {% for badge in pub.badges %}
+      {% unless badge.type == 'intl' or badge.type == 'domestic' %}
+        {% if badge.type == 'venue' %}
+          <span class="news-badge news-badge--venue">{{ badge.label }}</span>
+        {% elsif badge.type == 'year' %}
+          <span class="news-badge news-badge--year">{{ badge.label }}</span>
+        {% elsif badge.type == 'author' %}
+          <span class="news-badge news-badge--author">{{ badge.label }}</span>
+        {% elsif badge.type == 'submitted' %}
+          <span class="news-badge news-badge--submitted">{{ badge.label }}</span>
+        {% else %}
+          <span class="news-badge news-badge--{{ badge.type }}">{{ badge.label }}</span>
+        {% endif %}
+      {% endunless %}
+    {% endfor %}
+  </div>
+  {% endif %}
+  <h4 class="cv-pub-title">{{ pub.title }}</h4>
+  {% if pub.title_en %}
+    <p class="cv-pub-title-en">{{ pub.title_en }}</p>
+  {% endif %}
+  {% if pub.authors %}
+    {% assign authors_html = pub.authors | replace: 'Sijune Hwang', '<strong>Sijune Hwang</strong>' | replace: '황시준', '<strong>황시준</strong>' %}
+    <p class="cv-pub-authors">{{ authors_html }}</p>
+  {% endif %}
+  <p class="cv-pub-venue">
+    {{ pub.venue }}{% if pub.status %} · {{ pub.status }}{% endif %}
+  </p>
+  {% if pub.links or pub.link %}
+    <p class="cv-pub-links">
+      {% if pub.links %}
+        {% for item in pub.links %}
+          <a href="{{ item.url }}" target="_blank" rel="noopener">{{ item.label }}</a>
+        {% endfor %}
+      {% elsif pub.link %}
+        <a href="{{ pub.link }}" target="_blank" rel="noopener">{{ pub.link_label | default: 'Paper' }}</a>
+      {% endif %}
+    </p>
+  {% endif %}
+</article>

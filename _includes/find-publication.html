@@ -4,7 +4,7 @@
   Sets: found_pub
 {% endcomment %}
 {% assign found_pub = nil %}
-{% assign all_pubs = site.data.publications.international | concat: site.data.publications.domestic %}
+{% include all-publications.html %}
 {% for p in all_pubs %}
   {% if p.slug == include.slug %}
     {% assign found_pub = p %}

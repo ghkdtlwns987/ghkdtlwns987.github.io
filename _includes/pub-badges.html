@@ -43,6 +43,8 @@
     {% for badge in pub.badges %}
       {% if badge.type == 'author' %}
         <span class="news-badge news-badge--author">{{ badge.label }}</span>
+      {% elsif badge.type == 'submitted' %}
+        <span class="news-badge news-badge--submitted">{{ badge.label }}</span>
       {% endif %}
     {% endfor %}
   {% endif %}

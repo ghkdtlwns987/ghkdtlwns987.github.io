@@ -1,0 +1,94 @@
+---
+layout: default
+title: 소울카드 마스터
+permalink: /game/
+description: >-
+  소울카드 마스터 웹 프로토타입. 덱을 구성하고 AI 마스터와 듀얼합니다.
+---
+
+<link rel="stylesheet" href="{{ '/assets/css/soul-card-master.css' | relative_url }}?v=1">
+
+<div class="scm-app" id="scm-app" data-screen="title">
+  <section class="scm-screen scm-screen--title" data-screen-id="title">
+    <div class="scm-title-hero">
+      <p class="scm-kicker">Web Prototype</p>
+      <h1 class="scm-logo">소울카드 마스터</h1>
+      <p class="scm-tagline">마스터를 키우고, 덱으로 전선을 짜고, 상대 마스터를 쓰러뜨리세요.</p>
+    </div>
+    <div class="scm-title-actions">
+      <button type="button" class="scm-btn scm-btn--primary" data-action="duel">듀얼 시작</button>
+      <button type="button" class="scm-btn" data-action="deck">덱 편집</button>
+      <button type="button" class="scm-btn" data-action="howto">플레이 방법</button>
+    </div>
+    <p class="scm-note">클래식 TCG 룰을 웹에서 다시 만드는 프로토타입입니다. 카드·일러스트는 오리지널입니다.</p>
+  </section>
+
+  <section class="scm-screen scm-screen--howto" data-screen-id="howto" hidden>
+    <div class="scm-panel">
+      <h2>플레이 방법</h2>
+      <ul class="scm-rules">
+        <li>양측 필드는 <strong>3열 × 2행</strong>입니다. 그중 한 칸은 <strong>마스터</strong>가 차지합니다.</li>
+        <li>매 턴 마나가 1 오르고(최대 10) 카드를 1장 뽑습니다.</li>
+        <li>패에서 생물을 빈 칸에 소환하거나, 마법으로 대상에게 효과를 씁니다.</li>
+        <li><strong>앞열 생물이 있으면 같은 열 뒷열은 공격할 수 없습니다.</strong></li>
+        <li>생물은 소환한 턴에는 공격할 수 없고, 공격·이동은 턴당 한 번입니다.</li>
+        <li>상대 <strong>마스터 HP가 0</strong>이면 승리합니다. 덱은 24장, 같은 카드는 3장까지.</li>
+        <li>상성: 빛 &gt; 암 &gt; 물 &gt; 불 &gt; 숲 &gt; 빛. 유리하면 피해 +1.</li>
+      </ul>
+      <button type="button" class="scm-btn scm-btn--primary" data-action="title">돌아가기</button>
+    </div>
+  </section>
+
+  <section class="scm-screen scm-screen--deck" data-screen-id="deck" hidden>
+    <div class="scm-deck-head">
+      <h2>덱 편집</h2>
+      <p class="scm-deck-count">덱 <span id="scm-deck-n">0</span> / 24</p>
+      <div class="scm-title-actions">
+        <button type="button" class="scm-btn" data-action="reset-deck">기본 덱</button>
+        <button type="button" class="scm-btn scm-btn--primary" data-action="duel">이 덱으로 듀얼</button>
+        <button type="button" class="scm-btn" data-action="title">돌아가기</button>
+      </div>
+    </div>
+    <div class="scm-deck-layout">
+      <div>
+        <h3>컬렉션</h3>
+        <div class="scm-card-row" id="scm-collection"></div>
+      </div>
+      <div>
+        <h3>내 덱</h3>
+        <div class="scm-card-row" id="scm-my-deck"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="scm-screen scm-screen--battle" data-screen-id="battle" hidden>
+    <div class="scm-battle-top">
+      <div class="scm-master-hud" id="scm-hud-enemy"></div>
+      <div class="scm-turn-banner" id="scm-turn-banner">상대 턴</div>
+      <button type="button" class="scm-btn scm-btn--ghost" data-action="surrender">포기</button>
+    </div>
+    <div class="scm-board-wrap">
+      <div class="scm-board" id="scm-board-enemy" data-side="enemy"></div>
+      <div class="scm-midline"><span>전선</span></div>
+      <div class="scm-board" id="scm-board-player" data-side="player"></div>
+    </div>
+    <div class="scm-battle-bottom">
+      <div class="scm-master-hud" id="scm-hud-player"></div>
+      <button type="button" class="scm-btn scm-btn--primary" id="scm-end-turn" data-action="end-turn">턴 종료</button>
+    </div>
+    <div class="scm-hand" id="scm-hand"></div>
+    <p class="scm-hint" id="scm-hint">카드를 선택한 뒤 빈 칸에 소환하세요.</p>
+    <ol class="scm-log" id="scm-log" aria-label="전투 기록"></ol>
+  </section>
+
+  <div class="scm-fx-layer" id="scm-fx" aria-hidden="true"></div>
+  <div class="scm-modal" id="scm-modal" hidden>
+    <div class="scm-modal-card">
+      <h2 id="scm-modal-title">승리</h2>
+      <p id="scm-modal-body"></p>
+      <button type="button" class="scm-btn scm-btn--primary" data-action="title">로비로</button>
+    </div>
+  </div>
+</div>
+
+<script src="{{ '/assets/js/soul-card-master.js' | relative_url }}?v=1"></script>
