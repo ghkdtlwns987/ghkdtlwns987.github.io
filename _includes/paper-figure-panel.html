@@ -1,0 +1,36 @@
+{% comment %}
+  Multi-panel figure grid.
+  Pass cols, src1..src4, cap1..cap4, alt1..alt4, caption.
+  Do not put include-tag examples in this comment — Liquid still parses them.
+{% endcomment %}
+<figure class="post-figure post-figure-panel">
+  <div class="post-figure-panel__grid post-figure-panel__grid--{{ include.cols | default: 3 }}">
+    {% if include.src1 %}
+    <figure class="post-figure-panel__item">
+      <img src="{{ '/assets/images/' | append: include.src1 | relative_url }}" alt="{{ include.alt1 | default: include.cap1 | strip_html }}" loading="lazy">
+      {% if include.cap1 %}<figcaption>{{ include.cap1 }}</figcaption>{% endif %}
+    </figure>
+    {% endif %}
+    {% if include.src2 %}
+    <figure class="post-figure-panel__item">
+      <img src="{{ '/assets/images/' | append: include.src2 | relative_url }}" alt="{{ include.alt2 | default: include.cap2 | strip_html }}" loading="lazy">
+      {% if include.cap2 %}<figcaption>{{ include.cap2 }}</figcaption>{% endif %}
+    </figure>
+    {% endif %}
+    {% if include.src3 %}
+    <figure class="post-figure-panel__item">
+      <img src="{{ '/assets/images/' | append: include.src3 | relative_url }}" alt="{{ include.alt3 | default: include.cap3 | strip_html }}" loading="lazy">
+      {% if include.cap3 %}<figcaption>{{ include.cap3 }}</figcaption>{% endif %}
+    </figure>
+    {% endif %}
+    {% if include.src4 %}
+    <figure class="post-figure-panel__item">
+      <img src="{{ '/assets/images/' | append: include.src4 | relative_url }}" alt="{{ include.alt4 | default: include.cap4 | strip_html }}" loading="lazy">
+      {% if include.cap4 %}<figcaption>{{ include.cap4 }}</figcaption>{% endif %}
+    </figure>
+    {% endif %}
+  </div>
+  {% if include.caption %}
+  <figcaption class="post-figure-panel__caption">{{ include.caption }}</figcaption>
+  {% endif %}
+</figure>

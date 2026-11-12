@@ -92,7 +92,7 @@ description: >-
           <td>SQLD</td>
           <td>2024.09.20</td>
           <td>KData</td>
-          <td>—</td>
+          <td>SQLD-054022700</td>
         </tr>
       </tbody>
     </table>

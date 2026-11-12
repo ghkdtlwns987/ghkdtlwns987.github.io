@@ -66,6 +66,11 @@ defaults:
       path: "*.pdf"
     values:
       sitemap: false
+  - scope:
+      path: "portfolio"
+    values:
+      sitemap: false
+      robots: noindex, nofollow
 
 plugins:
   - jekyll-feed
